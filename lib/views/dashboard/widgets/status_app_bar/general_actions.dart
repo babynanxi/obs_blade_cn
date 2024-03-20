@@ -129,7 +129,7 @@ class GeneralActions extends StatelessWidget {
                 ],
                 AppBarActionEntry(
                   title:
-                      '${dashboardStore.isVirtualCamActive ? '停止' : '启动'} Virtual Camera',
+                      '${dashboardStore.isVirtualCamActive ? '停止' : '启动'} 虚拟摄像头',
                   leadingIcon: CupertinoIcons.camera_on_rectangle_fill,
                   onAction: () {
                     NetworkHelper.makeRequest(
@@ -203,7 +203,7 @@ class GeneralActions extends StatelessWidget {
                 ),
                 AppBarActionEntry(
                   title:
-                      '${dashboardStore.editSceneVisibility ? '结束' : '编辑'} Scene Visibility',
+                      '${dashboardStore.editSceneVisibility ? '结束' : '编辑'} 场景可见度',
                   leadingIcon: CupertinoIcons.eyeglasses,
                   onAction: dashboardStore.editSceneVisibility
                       ? () {
@@ -247,7 +247,7 @@ class GeneralActions extends StatelessWidget {
                             },
                 ),
                 AppBarActionEntry(
-                  title: '${newConnection ? '关闭' : '编辑'} Connection',
+                  title: '${newConnection ? '关闭' : '编辑'} 连接名称',
                   leadingIcon: CupertinoIcons.pencil_ellipsis_rectangle,
                   onAction: () {
                     ModalHandler.showBaseDialog(

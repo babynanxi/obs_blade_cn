@@ -115,7 +115,7 @@ class _HomeViewState extends State<HomeView> {
     mob_x.when((_) => GetIt.instance<NetworkStore>().obsTerminated, () {
       SchedulerBinding.instance.addPostFrameCallback((_) {
         GeneralHelper.advLog(
-          'Your connection to OBS has been lost and the app was not able to reconnect.',
+          '您与 OBS 的连接已丢失，应用程序无法重新连接。',
           level: LogLevel.Warning,
           includeInLogs: true,
         );
@@ -125,7 +125,7 @@ class _HomeViewState extends State<HomeView> {
             barrierDismissible: true,
             dialogWidget: const InfoDialog(
                 body:
-                    'Your connection to OBS has been lost and the app was not able to reconnect.'),
+                    '您与 OBS 的连接已丢失，应用程序无法重新连接。'),
           ).then(
             (_) => GetIt.instance<HomeStore>().updateAutodiscoverConnections(),
           );
@@ -149,7 +149,7 @@ class _HomeViewState extends State<HomeView> {
           context: context,
           showDuration: const Duration(seconds: 5),
           content: BaseProgressIndicator(
-            text: 'Connecting...',
+            text: '正在连接...',
           ),
         );
       } else if (!connectionInProgress) {

@@ -27,7 +27,7 @@ class SaveEditConnectionDialog extends StatelessWidget {
       body:
           '请为连接设置一个名称，以便您以后识别',
       inputText: networkStore.activeSession!.connection.name,
-      inputPlaceholder: 'Name of the connection',
+      inputPlaceholder: '连接名称',
       inputCheck: (name) {
         name = name?.trim();
         if (name?.isEmpty ?? false) {

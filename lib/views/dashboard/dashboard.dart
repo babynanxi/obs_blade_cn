@@ -117,9 +117,9 @@ class _DashboardViewState extends State<DashboardView> {
     ModalHandler.showBaseDialog(
       context: context,
       dialogWidget: ConfirmationDialog(
-        title: 'Save Connection',
+        title: '保存连接',
         body:
-            'Do you want to save this connection? You can do it later as well!\n\n(Click on the icon on the top right of the screen and select "Save / Edit Connection"',
+            '您想保存此连接吗？ 您也可以稍后再做！\n\n（单击屏幕右上角的图标，然后选择“保存/编辑连接”"',
         onOk: (_) {
           Future.delayed(
             ModalHandler.transitionDelayDuration,

@@ -109,7 +109,7 @@ class _PurchaseBaseState extends State<PurchaseBase> {
       context: RoutingHelper.tabBaseKey.currentContext!,
       showDuration: const Duration(seconds: 10),
       content: BaseProgressIndicator(
-        text: 'Pending...',
+        text: '待办...',
       ),
     );
   }
