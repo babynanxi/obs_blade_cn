@@ -30,20 +30,20 @@ class SettingsView extends StatelessWidget {
         physics: StylingHelper.platformAwareScrollPhysics,
         slivers: <Widget>[
           const ThemedCupertinoSliverNavigationBar(
-            largeTitle: Text('Settings'),
+            largeTitle: Text('设置'),
           ),
           HiveBuilder<dynamic>(
             hiveKey: HiveKeys.Settings,
             builder: (context, settingsBox, child) => CustomSliverList(
               children: [
                 ActionBlock(
-                  title: 'General',
+                  title: '一般的',
                   blockEntries: [
                     BlockEntry(
                       leading: CupertinoIcons.device_phone_portrait,
-                      title: 'Wake Lock',
+                      title: '唤醒锁',
                       help:
-                          'This option will keep the screen active while connected to an OBS instance. If you are not connected to an OBS instance, the time set in your phone settings will be used as usual.',
+                          '此选项将使屏幕在连接到 OBS 实例时保持活动状态。 如果您未连接OBS实例，则将照常使用手机设置中设置的时间。',
                       trailing: BaseAdaptiveSwitch(
                         value: settingsBox.get(
                           SettingsKeys.WakeLock.name,
@@ -69,9 +69,9 @@ class SettingsView extends StatelessWidget {
                     ),
                     BlockEntry(
                       leading: CupertinoIcons.loop,
-                      title: 'Unlimited Retries',
+                      title: '无限次重试',
                       help:
-                          'When active, OBS Blade will try to reconnect to a lost OBS connection indefinitely instead of aborting when reaching a fixed amount of attempts.',
+                          '处于活动状态时，OBS Blade 将无限期地尝试重新连接到丢失的 OBS 连接，而不是在达到固定尝试次数时中止。',
                       trailing: BaseAdaptiveSwitch(
                         value: settingsBox.get(
                           SettingsKeys.UnlimitedReconnects.name,
@@ -85,22 +85,22 @@ class SettingsView extends StatelessWidget {
                     ),
                     const BlockEntry(
                       leading: CupertinoIcons.archivebox_fill,
-                      title: 'Data Management',
+                      title: '数据管理',
                       navigateTo: SettingsTabRoutingKeys.DataManagement,
                     ),
                   ],
                 ),
                 ActionBlock(
-                  title: 'Dashboard',
+                  title: '仪表板',
                   description:
-                      'Customisation allows you to change the UI of the dashboard view to add quick access buttons / features which are hidden in the menu bar by default.',
+                      '自定义允许您更改仪表板视图的 UI，以添加默认隐藏在菜单栏中的快速访问按钮/功能.',
                   blockEntries: [
                     BlockEntry(
                       leading: CupertinoIcons.camera_on_rectangle_fill,
                       leadingSize: 28.0,
-                      title: 'Streaming Mode',
+                      title: '串流模式',
                       help:
-                          'Changes the whole layout of the dashboard to focus on scene preview and chat. Better to keep an overview of the most important part while streaming!',
+                          '更改仪表板的整体布局，以专注于场景预览和聊天。 最好在直播时保留最重要部分的概览!',
                       trailing: BaseAdaptiveSwitch(
                         value: settingsBox.get(
                           SettingsKeys.StreamingMode.name,
@@ -117,9 +117,9 @@ class SettingsView extends StatelessWidget {
                     BlockEntry(
                       leading: CupertinoIcons.film,
                       leadingSize: 26.0,
-                      title: 'Studio Mode',
+                      title: '工作室模式',
                       help:
-                          'Enables the awareness and usage of the Studio Mode in OBS Blade. Will expose additional settings / buttons in the dashboard.',
+                          '启用 OBS Blade 中 Studio 模式的感知和使用。 将在仪表板中公开其他设置/按钮。',
                       trailing: BaseAdaptiveSwitch(
                         value: settingsBox.get(
                           SettingsKeys.ExposeStudioControls.name,
@@ -136,9 +136,9 @@ class SettingsView extends StatelessWidget {
                     BlockEntry(
                       leading: CupertinoIcons.table_fill,
                       leadingSize: 28.0,
-                      title: 'Force Tablet Mode',
+                      title: '强制平板电脑模式',
                       help:
-                          'Elements in the Dashboard View will be displayed next to each other instead of being in tabs if the screen is big enough. If you want to you can set this manually.\n\nCAUTION: Will probably not fit your screen.',
+                          '如果屏幕足够大，仪表板视图中的元素将彼此相邻显示，而不是显示在选项卡中。 如果您愿意，可以手动设置。\n\n注意：可能不适合您的屏幕。',
                       trailing: BaseAdaptiveSwitch(
                         value: settingsBox.get(
                             SettingsKeys.EnforceTabletMode.name,
@@ -153,17 +153,17 @@ class SettingsView extends StatelessWidget {
                     ),
                     const BlockEntry(
                       leading: CupertinoIcons.layers_fill,
-                      title: 'Customisation',
+                      title: '定制化',
                       navigateTo: SettingsTabRoutingKeys.DashboardCustomisation,
                     ),
                   ],
                 ),
                 ActionBlock(
-                  title: 'Theme',
+                  title: '主题',
                   blockEntries: [
                     BlockEntry(
                       leading: CupertinoIcons.lab_flask_solid,
-                      title: 'Custom Theme',
+                      title: '自定义主题',
                       navigateTo: SettingsTabRoutingKeys.CustomTheme,
                       navigateToResult: Text(
                         settingsBox.get(SettingsKeys.CustomTheme.name,
@@ -175,7 +175,7 @@ class SettingsView extends StatelessWidget {
                     BlockEntry(
                       leading: CupertinoIcons.moon_circle_fill,
                       leadingSize: 30.0,
-                      title: 'True Dark Mode',
+                      title: '暗黑模式',
                       trailing: BaseAdaptiveSwitch(
                         value: settingsBox.get(
                           SettingsKeys.TrueDark.name,
@@ -186,7 +186,7 @@ class SettingsView extends StatelessWidget {
                           defaultValue: false,
                         ),
                         disabledChangeInfo:
-                            'This setting has no effect and can\'t be changed while Custom Theme is active',
+                            '当自定义主题处于活动状态时，此设置无效且无法更改',
                         onChanged: (trueDark) {
                           settingsBox.put(
                             SettingsKeys.TrueDark.name,
@@ -199,9 +199,9 @@ class SettingsView extends StatelessWidget {
                         defaultValue: false))
                       BlockEntry(
                         leading: CupertinoIcons.drop_fill,
-                        title: 'Reduce Smearing',
+                        title: '减少拖尾现象',
                         help:
-                            'Only relevant for OLED displays. Using a fully black background might cause smearing while scrolling so this option will apply a slightly lighter background color.\n\nCAUTION: Might drain "more" battery.',
+                            '仅与 OLED 显示器相关。 使用全黑背景可能会导致滚动时出现拖尾现象，因此此选项将应用稍浅的背景颜色。\n\n注意：可能会消耗“更多”电池电量.',
                         trailing: BaseAdaptiveSwitch(
                           value: settingsBox.get(
                             SettingsKeys.ReduceSmearing.name,
@@ -212,7 +212,7 @@ class SettingsView extends StatelessWidget {
                             defaultValue: false,
                           ),
                           disabledChangeInfo:
-                              'This setting has no effect and can\'t be changed while Custom Theme is active',
+                              '当自定义主题处于活动状态时，此设置无效且无法更改',
                           onChanged: (reduceSmearing) {
                             settingsBox.put(
                               SettingsKeys.ReduceSmearing.name,
@@ -224,9 +224,9 @@ class SettingsView extends StatelessWidget {
                     BlockEntry(
                       leading: CupertinoIcons.wand_stars,
                       leadingSize: 30.0,
-                      title: 'Force non native UI',
+                      title: '强制非本机 UI',
                       help:
-                          'OBS Blade started out with mostly using iOS UI components. It is now somewhat adaptive and should be platform agnostic to some degree.\n\nIf, for whatever reason, you want to use the non native elements, turn this on!',
+                          'OBS Blade 最初主要使用 iOS UI 组件。 它现在具有一定的适应性，并且在某种程度上应该与平台无关。\n\n如果出于某种原因您想要使用非本机元素，请打开它！',
                       trailing: BaseAdaptiveSwitch(
                         value: settingsBox.get(
                           SettingsKeys.ForceNonNativeElements.name,
@@ -243,45 +243,45 @@ class SettingsView extends StatelessWidget {
                   ],
                 ),
                 const ActionBlock(
-                  title: 'Misc.',
+                  title: '杂项.',
                   blockEntries: [
                     BlockEntry(
                       leading: CupertinoIcons.info_circle_fill,
-                      title: 'About',
+                      title: '关于',
                       navigateTo: SettingsTabRoutingKeys.About,
                     ),
                     BlockEntry(
                       leading: CupertinoIcons.chat_bubble_text_fill,
-                      title: 'FAQ | Help',
+                      title: 'FAQ | 帮助',
                       navigateTo: SettingsTabRoutingKeys.FAQ,
                     ),
                     BlockEntry(
                       leading: CupertinoIcons.book_fill,
-                      title: 'Intro Slides',
+                      title: '介绍幻灯片',
                       navigateTo: AppRoutingKeys.Intro,
                       rootNavigation: true,
                     ),
                     BlockEntry(
                       leading: CupertinoIcons.doc_person_fill,
-                      title: 'Privacy Policy',
+                      title: '隐私政策',
                       navigateTo: SettingsTabRoutingKeys.PrivacyPolicy,
                     ),
                     BlockEntry(
                       leading: CupertinoIcons.square_list_fill,
-                      title: 'Logs',
+                      title: '日志',
                       navigateTo: SettingsTabRoutingKeys.Logs,
                     ),
                   ],
                 ),
                 ActionBlock(
-                  title: 'Support',
+                  title: '支持',
                   descriptionWidget: FutureBuilder<PackageInfo>(
                     future: PackageInfo.fromPlatform(),
                     builder: (context, snapshot) {
                       return Row(
                         children: [
                           Text(
-                            'Version ',
+                            '版本 ',
                             style: Theme.of(context).textTheme.bodySmall,
                           ),
                           if (snapshot.hasData)
@@ -291,12 +291,12 @@ class SettingsView extends StatelessWidget {
                             ),
                         ],
                       );
-                    },
+                     },
                   ),
                   blockEntries: [
                     BlockEntry(
                       leading: CupertinoIcons.hammer_fill,
-                      title: 'Blacksmith',
+                      title: '铁匠',
                       navigateToResult: Text(
                         (settingsBox.get(SettingsKeys.BoughtBlacksmith.name,
                                 defaultValue: false) as bool)
@@ -307,7 +307,7 @@ class SettingsView extends StatelessWidget {
                         context: context,
                         barrierDismissible: true,
                         dialogWidget: const SupportDialog(
-                          title: 'Blacksmith',
+                          title: '铁匠',
                           icon: CupertinoIcons.hammer_fill,
                           type: SupportType.Blacksmith,
                         ),
@@ -315,18 +315,18 @@ class SettingsView extends StatelessWidget {
                     ),
                     BlockEntry(
                       leading: CupertinoIcons.gift_fill,
-                      title: 'Tip Jar',
+                      title: '礼品',
                       onTap: () => ModalHandler.showBaseDialog(
                         context: context,
                         barrierDismissible: true,
                         dialogWidget: const SupportDialog(
-                          title: 'Tips',
+                          title: '礼品',
                           icon: CupertinoIcons.gift_fill,
                           type: SupportType.Tips,
                         ),
                       ),
                     ),
-                  ],
+                  ], 
                 ),
               ],
             ),

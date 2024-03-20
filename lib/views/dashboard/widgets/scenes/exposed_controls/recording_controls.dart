@@ -48,7 +48,7 @@ class RecordingControls extends StatelessWidget {
                 color: dashboardStore.isRecording
                     ? CupertinoColors.destructiveRed
                     : CupertinoColors.activeGreen,
-                text: dashboardStore.isRecording ? 'Stop' : 'Start',
+                text: dashboardStore.isRecording ? '停止录制' : '开始录制',
               ),
             ),
             const SizedBox(width: kExposedControlsSpace),
@@ -68,7 +68,7 @@ class RecordingControls extends StatelessWidget {
                 color: dashboardStore.isRecordingPaused
                     ? CupertinoColors.activeGreen
                     : CupertinoColors.activeOrange,
-                text: dashboardStore.isRecordingPaused ? 'Resume' : 'Pause',
+                text: dashboardStore.isRecordingPaused ? '恢复' : '暂停',
               ),
             ),
           ],

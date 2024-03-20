@@ -23,7 +23,7 @@ class DashboardContent extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8.0),
           alignment: Alignment.centerLeft,
           child: Text(
-            'Widgets',
+            '小部件',
             style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),

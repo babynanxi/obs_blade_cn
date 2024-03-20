@@ -140,9 +140,9 @@ class LogDetailView extends StatelessWidget {
                       ModalHandler.showBaseDialog(
                         context: context,
                         dialogWidget: ConfirmationDialog(
-                            title: 'Delete Logs',
+                            title: '删除日志',
                             body:
-                                'Are you sure you want to delete all logs listed here? This action can\'t be undone!',
+                                '您确定要删除此处列出的所有日志吗？ 此操作无法撤消!',
                             isYesDestructive: true,
                             onOk: (_) {
                               for (var logList in mergedLogs.values) {
@@ -203,7 +203,7 @@ class LogDetailView extends StatelessWidget {
                     child: BaseResult(
                       icon: BaseResultIcon.Missing,
                       text:
-                          'No logs found for type: ${logsStore.logLevel?.name}',
+                          '未找到该类型的日志: ${logsStore.logLevel?.name}',
                     ),
                   ),
               ],

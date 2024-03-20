@@ -131,6 +131,13 @@ abstract class _DashboardStore with Store {
   /// are on top level and a custom [SceneItem.displayGroup] propertry
   /// toggles whether they will be displayed or not, but this makes
   /// searching and updating scene items easier
+   /// WebSocket API 将返回所有顶级场景项
+   /// 必须请求当前场景和组元素
+   /// 单独。 为了更好地维护和使用场景项目，我
+   /// 展平这些所有场景项目，甚至是组的子项目
+   /// 位于顶层和自定义 [SceneItem.displayGroup] 属性
+   /// 切换它们是否显示，但这使得
+   /// 搜索和更新场景项更容易
   @observable
   ObservableList<SceneItem> currentSceneItems = ObservableList();
 
@@ -374,6 +381,10 @@ abstract class _DashboardStore with Store {
   /// of the batch request capabilities every second since we don't receive
   /// a status event every 2 seconds (as it was prior OBS WebSocket 4.9.1 and
   /// below)
+   /// 通过使用定期轮询 OBS、流和记录统计信息
+   /// 每秒的批量请求能力，因为我们没有收到
+   /// 每 2 秒一个状态事件（因为这是之前的 OBS WebSocket 4.9.1 和
+   /// 以下）
   void _periodicStatsRequest() {
     _getStatsTimer?.cancel();
     _getStatsTimer = Timer.periodic(

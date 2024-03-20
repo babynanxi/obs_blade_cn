@@ -54,15 +54,15 @@ class DataManagementView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: TransculentCupertinoNavBarWrapper(
-        previousTitle: 'Settings',
-        title: 'Data Management',
+        previousTitle: '设置',
+        title: '数据管理',
         listViewChildren: [
           DataBlock(
             dataEntries: [
               DataEntry(
-                title: 'Saved Connections',
+                title: '已保存的连接',
                 description:
-                    'All saved connections which are listed beneath the autodiscover / connect box in the home tab (at least once you saved any connections).',
+                    '主页选项卡中自动发现/连接框下方列出的所有已保存连接（至少在保存任何连接后）。',
                 onClear: () {
                   Hive.box<Connection>(HiveKeys.SavedConnections.name).clear();
 
@@ -70,7 +70,7 @@ class DataManagementView extends StatelessWidget {
                     AppLog(
                       DateTime.now().millisecondsSinceEpoch,
                       LogLevel.Warning,
-                      'All saved connections have been deleted by the user.',
+                      '所有保存的连接已被用户删除。',
                       null,
                       true,
                     ),
@@ -78,9 +78,9 @@ class DataManagementView extends StatelessWidget {
                 },
               ),
               DataEntry(
-                title: 'Statistics',
+                title: '设置',
                 description:
-                    'All entries listed in the statistics tab which are created for every live stream OBS Blade is connected to.',
+                    '统计选项卡中列出的所有条目都是为连接到的每个实时流 OBS 刀片创建的。',
                 onClear: () {
                   /// Since the user might be in a detailed statistic view, we pop until
                   /// we are back in the root view
@@ -96,7 +96,7 @@ class DataManagementView extends StatelessWidget {
                     AppLog(
                       DateTime.now().millisecondsSinceEpoch,
                       LogLevel.Warning,
-                      'All statistics have been deleted by the user.',
+                      '所有统计数据均已被用户删除。',
                       null,
                       true,
                     ),
@@ -104,9 +104,9 @@ class DataManagementView extends StatelessWidget {
                 },
               ),
               DataEntry(
-                title: 'Hidden Scenes',
+                title: '隐藏场景',
                 description:
-                    'All scenes that have been hidden in the dashboard of a connected OBS instance.',
+                    '已连接的OBS实例仪表板中隐藏的所有场景。',
                 onClear: () {
                   Hive.box<HiddenScene>(HiveKeys.HiddenScene.name).clear();
 
@@ -114,7 +114,7 @@ class DataManagementView extends StatelessWidget {
                     AppLog(
                       DateTime.now().millisecondsSinceEpoch,
                       LogLevel.Warning,
-                      'All hidden scenes have been deleted by the user.',
+                      '所有隐藏场景已被用户删除。',
                       null,
                       true,
                     ),
@@ -122,9 +122,9 @@ class DataManagementView extends StatelessWidget {
                 },
               ),
               DataEntry(
-                title: 'Hidden Scene Items',
+                title: '隐藏场景物品',
                 description:
-                    'All scene items that have been hidden in the dashboard of a connected OBS instance.',
+                    '已连接的 OBS 实例的仪表板中隐藏的所有场景项。',
                 onClear: () {
                   Hive.box<HiddenSceneItem>(HiveKeys.HiddenSceneItem.name)
                       .clear();
@@ -133,14 +133,14 @@ class DataManagementView extends StatelessWidget {
                     AppLog(
                       DateTime.now().millisecondsSinceEpoch,
                       LogLevel.Warning,
-                      'All hidden scene items have been deleted by the user.',
+                      '所有隐藏的场景项目已被用户删除。',
                       null,
                       true,
                     ),
                   );
                 },
               ),
-              DataEntry(
+              /* DataEntry(
                 title: 'Twitch Chats',
                 description:
                     'All Twitch usernames that have been added to the stream chat widget in the dashboard.',
@@ -181,11 +181,11 @@ class DataManagementView extends StatelessWidget {
                     ),
                   );
                 },
-              ),
+              ), */
               DataEntry(
-                title: 'Don\'t ask me again Checks',
+                title: '不要再问我检查',
                 description:
-                    'All checks set in the dialogs popped up to explain something very important but could get annoying very fast and aren\'t showing up anymore. If you want to see them again - here you go!',
+                    '执行弹出对话框中设置的所有检查，以解释一些非常重要的事情，但可能很快就会变得烦人，并且不再显示。 如果您想再次见到他们 - 就在这里',
                 onClear: () {
                   for (SettingsKeys key in SettingsKeys.values
                       .where((key) => key.name.startsWith('dont-show'))) {
@@ -196,7 +196,7 @@ class DataManagementView extends StatelessWidget {
                     AppLog(
                       DateTime.now().millisecondsSinceEpoch,
                       LogLevel.Warning,
-                      'All don\'t ask me again checks have been deleted by the user.',
+                      '所有“不要再问我”检查均已被用户删除。',
                       null,
                       true,
                     ),
@@ -204,9 +204,9 @@ class DataManagementView extends StatelessWidget {
                 },
               ),
               DataEntry(
-                title: 'Logs',
+                title: '日志',
                 description:
-                    'All log entries found under "Logs" in the settings tab. You can delete them selectively in the logs view!',
+                    '在设置选项卡的“日志”下找到的所有日志条目。 您可以在日志视图中有选择地删除它们！',
                 onClear: () => Hive.box<AppLog>(HiveKeys.AppLog.name).clear(),
               ),
             ],
@@ -214,13 +214,13 @@ class DataManagementView extends StatelessWidget {
           DataBlock(
             dataEntries: [
               DataEntry(
-                title: 'All Data',
+                title: '全部数据',
                 description:
-                    'All the data the app persisted so far including settings set like custom theme, wakelock etc. or any saved connections and so on.',
+                    '到目前为止，应用程序保留的所有数据包括自定义主题、唤醒锁等设置或任何保存的连接等。',
                 customConfirmationText:
-                    'Are you sure? Like I mean all kind of things set like settings or entries added like connections or statistics will be deleted. There is no turning back!',
+                    '你确定吗？ 就像我的意思是，所有类型的设置（例如设置）或添加的条目（例如连接或统计信息）都将被删除。 没有回头路!',
                 additionalConfirmationText:
-                    'It seems you are sure about this, right? Well, go ahead... just want to make sure it\'s actually intended! :)',
+                    '看来你对此很确定，对吧？ 好吧，继续......只是想确保它确实是有意的！ :)',
                 onClear: () => _deleteAll(context),
               ),
             ],

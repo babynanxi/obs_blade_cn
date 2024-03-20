@@ -16,8 +16,8 @@ class LogsView extends StatelessWidget {
 
     return Scaffold(
       body: TransculentCupertinoNavBarWrapper(
-        previousTitle: 'Settings',
-        title: 'Logs',
+        previousTitle: '设置',
+        title: '日志',
         showScrollBar: true,
         listViewChildren: const [
           LogExplanation(),

@@ -89,7 +89,7 @@ class ConnectionBox extends StatelessWidget {
                     const SizedBox(width: 24.0),
                     Expanded(
                       child: BaseButton(
-                        text: 'Connect',
+                        text: '连接',
                         onPressed: () {
                           FocusScope.of(context).unfocus();
                           networkStore
@@ -101,7 +101,7 @@ class ConnectionBox extends StatelessWidget {
                                 context: context,
                                 content: const BaseResult(
                                   icon: BaseResultIcon.Negative,
-                                  text: 'Wrong password!',
+                                  text: '密码错误!',
                                 ),
                               );
                             }
@@ -118,7 +118,7 @@ class ConnectionBox extends StatelessWidget {
                         //   Icons.edit,
                         //   size: 20.0,
                         // ),
-                        text: 'Edit',
+                        text: '编辑',
                         secondary: true,
                         onPressed: () => ModalHandler.showBaseDialog(
                           context: context,

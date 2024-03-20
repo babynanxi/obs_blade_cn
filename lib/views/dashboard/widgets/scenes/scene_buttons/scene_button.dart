@@ -101,14 +101,14 @@ class SceneButton extends StatelessWidget {
                     NetworkHelper.makeRequest(
                       GetIt.instance<NetworkStore>().activeSession!.socket,
                       RequestType.SetCurrentPreviewScene,
-                      {'sceneName': scene.sceneName},
+                      {'场景名称': scene.sceneName},
                     );
                   } else {
                     dashboardStore.setActiveSceneName(scene.sceneName);
                     NetworkHelper.makeRequest(
                       GetIt.instance<NetworkStore>().activeSession!.socket,
                       RequestType.SetCurrentProgramScene,
-                      {'sceneName': scene.sceneName},
+                      {'场景名称': scene.sceneName},
                     );
                   }
                 }

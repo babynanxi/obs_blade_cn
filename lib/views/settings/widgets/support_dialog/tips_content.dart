@@ -65,7 +65,7 @@ class TipsContent extends StatelessWidget {
     return Column(
       children: [
         const Text(
-          'If you enjoy OBS Blade and want to support the development, leaving a tip would mean a lot to me!',
+          '如果您喜欢 OBS Blade 并希望支持开发，留下小费对我来说意义重大!',
         ),
         // const SizedBox(height: 12.0),
         const BaseDivider(
@@ -82,7 +82,7 @@ class TipsContent extends StatelessWidget {
                         (tipAwesomeness) => DonateButton(
                           text: '$tipAwesomeness Tip',
                           errorText: this.tipsDetails != null
-                              ? 'Could not retrieve App Store information! Please check your internet connection and try again. If this problem persists, please reach out to me, thanks!'
+                              ? '无法检索 App Store 信息！ 请检查您的互联网连接，然后重试。 如果问题依然存在，请联系我，谢谢!'
                               : null,
                         ),
                       ),
@@ -109,7 +109,7 @@ class TipsContent extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(top: 12.0),
                 child: Text(
-                    'You tipped ${_sumTipped(purchasedTipBox.values)} so far\nYou are awesome :)'),
+                    '你给了小费 ${_sumTipped(purchasedTipBox.values)} 到目前为止\你太棒了 :)'),
               );
             }
             return Container();

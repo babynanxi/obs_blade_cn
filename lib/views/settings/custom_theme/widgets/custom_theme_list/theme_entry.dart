@@ -67,7 +67,7 @@ class ThemeEntry extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          this.customTheme.name ?? 'Unnamed theme',
+                          this.customTheme.name ?? '未命名主题',
                           overflow: TextOverflow.ellipsis,
                         ),
                         if (this.customTheme.description != null &&
@@ -92,7 +92,7 @@ class ThemeEntry extends StatelessWidget {
           if (this.isEditable)
             ThemedCupertinoButton(
               padding: const EdgeInsets.only(right: 24.0),
-              text: 'Edit',
+              text: '编辑',
               onPressed: () => ModalHandler.showBaseCupertinoBottomSheet(
                 context: context,
                 modalWidgetBuilder: (context, scrollController) => AddEditTheme(

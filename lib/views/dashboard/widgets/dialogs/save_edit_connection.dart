@@ -23,20 +23,20 @@ class SaveEditConnectionDialog extends StatelessWidget {
 
     Box<Connection> box = Hive.box<Connection>(HiveKeys.SavedConnections.name);
     return InputDialog(
-      title: '${this.newConnection ? 'Save' : 'Edit'} Connection',
+      title: '${this.newConnection ? '保存' : '取消'} Connection',
       body:
-          'Please choose a name for the connection so you can recognize it later on',
+          '请为连接设置一个名称，以便您以后识别',
       inputText: networkStore.activeSession!.connection.name,
       inputPlaceholder: 'Name of the connection',
       inputCheck: (name) {
         name = name?.trim();
         if (name?.isEmpty ?? false) {
-          return 'Please provide a name!';
+          return '请提供名称!';
         }
         if (box.values.any((connection) =>
             name != networkStore.activeSession!.connection.name &&
             connection.name == name)) {
-          return 'Name already used!';
+          return '名称已被使用!';
         }
         return null;
       },

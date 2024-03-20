@@ -18,7 +18,7 @@ class ExcludeUnnamedCheckbox extends StatelessWidget {
       child: Observer(
         builder: (context) => BaseCheckbox(
           value: statisticsStore.excludeUnnamedStats,
-          text: 'Exclude unnamed entries',
+          text: '排除未命名的条目',
           smallText: true,
           tristate: true,
           onChanged: (excludeUnnamedStats) {

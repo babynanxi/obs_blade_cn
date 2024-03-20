@@ -103,12 +103,12 @@ class _QRScanState extends State<QRScan> {
         scale: 0.8,
         child: const QuestionMarkTooltip(
             message:
-                'You can find the QR code in:\n\nTools -> WebSocket Server Settings -> Show Connect Info'),
+                '您可以在以下位置找到 QR 码：\n\n工具 -> WebSocket 服务器设置 -> 显示连接信息'),
       ),
-      title: 'Quick Connect',
+      title: '快速连接',
       actions: ThemedCupertinoButton(
         padding: const EdgeInsets.all(0),
-        text: 'Close',
+        text: '关闭',
         onPressed: () => Navigator.of(context).pop(),
       ),
       customBody: Column(
@@ -119,7 +119,7 @@ class _QRScanState extends State<QRScan> {
               alignment: Alignment.center,
               children: [
                 BaseProgressIndicator(
-                  text: 'Initialising camera...',
+                  text: '初始化相机...',
                 ),
                 QRView(
                   key: _key,
@@ -142,7 +142,7 @@ class _QRScanState extends State<QRScan> {
                         barrierDismissible: true,
                         dialogWidget: InfoDialog(
                           body:
-                              'OBS Blade has no permission to use your camera. This feature does not work without using the camera, since we will scan a QR code provided by the WebSocket plugin.\n\nIf you change your mind and want to use this feature, go to:\n\niOS Settings -> OBS Blade (scroll way down) -> Toggle camera on',
+                              'OBS Blade 无权使用您的相机。 如果不使用摄像头，此功能将无法使用，因为我们将扫描 WebSocket 插件提供的二维码。\n\n如果您改变主意并想要使用此功能，请转至：\n\n设置 -> OBS Blade （向下滚动）-> 打开相机',
                           onPressed: (_) => Navigator.of(context).pop(),
                         ),
                       );
@@ -160,18 +160,18 @@ class _QRScanState extends State<QRScan> {
               child: _controller != null && _permission
                   ? _qrScanState == null
                       ? BaseProgressIndicator(
-                          text: 'Waiting for QR code...',
+                          text: '扫描二维码...',
                         )
                       : _qrScanState!
                           ? const BaseResult(
                               icon: BaseResultIcon.Positive,
                               iconColor: CupertinoColors.activeGreen,
-                              text: 'Quick connect QR code found!',
+                              text: '找到快速连接二维码!',
                             )
                           : const BaseResult(
                               icon: BaseResultIcon.Negative,
                               iconColor: CupertinoColors.destructiveRed,
-                              text: 'Wrong QR code!',
+                              text: '二维码错误!',
                             )
                   : const SizedBox(),
             ),

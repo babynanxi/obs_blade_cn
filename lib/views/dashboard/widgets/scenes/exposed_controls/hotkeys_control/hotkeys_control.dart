@@ -52,11 +52,11 @@ class HotkeysControl extends StatelessWidget {
                           context: context,
                           dialogWidget: ConfirmationDialog(
                             enableDontShowAgainOption: true,
-                            title: 'Technical Preview',
+                            title: '技术预览 ',
                             body:
-                                'The hotkey capabilities of the WebSocket API are currently very limited and therefore this feature is currently in technical preview. Since it might still be useful for some, even in this condition, I added the basic functionality. It is expected to not work properly. I will update this feature once it is more mature!',
-                            noText: 'Cancel',
-                            okText: 'Ok',
+                                'WebSocket API 的热键功能目前非常有限，因此该功能目前处于技术预览阶段。 由于即使在这种情况下它对某些人可能仍然有用，所以我添加了基本功能。 预计将无法正常工作。 等这个功能成熟了我会更新的！',
+                            noText: '取消',
+                            okText: '确认',
                             onOk: (checked) {
                               Hive.box<dynamic>(HiveKeys.Settings.name).put(
                                   SettingsKeys

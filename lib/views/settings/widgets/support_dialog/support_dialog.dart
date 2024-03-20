@@ -47,7 +47,7 @@ class _SupportDialogState extends State<SupportDialog> {
     final bool available = await InAppPurchase.instance.isAvailable();
     if (!available) {
       _error =
-          'Connection to the App Store is not possible. Make sure you have a working internet connection.\n\nFeel free to let me know if this problem persists!';
+          '无法连接到 App Store。 确保您的互联网连接正常。\n\n如果此问题仍然存在，请随时告诉我！';
       GeneralHelper.advLog(
         _error,
         includeInLogs: true,
@@ -57,7 +57,7 @@ class _SupportDialogState extends State<SupportDialog> {
     Set<String> inAppPurchasesIDs = {};
     switch (this.widget.type) {
       case SupportType.Blacksmith:
-        inAppPurchasesIDs = {'blacksmith'};
+        inAppPurchasesIDs = {'铁匠'};
         break;
       case SupportType.Tips:
         inAppPurchasesIDs = {'tip_1', 'tip_2', 'tip_3'};

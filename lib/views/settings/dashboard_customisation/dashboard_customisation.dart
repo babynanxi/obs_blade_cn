@@ -19,8 +19,8 @@ class DashboardCustomisationView extends StatelessWidget {
         hiveKey: HiveKeys.Settings,
         builder: (context, settingsBox, child) =>
             TransculentCupertinoNavBarWrapper(
-          previousTitle: 'Settings',
-          title: 'Dashboard Customisation',
+          previousTitle: '设置',
+          title: '仪表板定制',
           listViewChildren: [
             ActionBlock(
               dense: true,
@@ -28,7 +28,7 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: CupertinoIcons.profile_circled,
                   leadingSize: 30.0,
-                  title: 'Profiles',
+                  title: '配置文件快速切换',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(
                       SettingsKeys.ExposeProfile.name,
@@ -45,7 +45,7 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: CupertinoIcons.collections_solid,
                   leadingSize: 26.0,
-                  title: 'Scene Collections',
+                  title: '场景集合快速切换',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(
                       SettingsKeys.ExposeSceneCollection.name,
@@ -62,9 +62,9 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: Icons.live_tv_rounded,
                   leadingSize: 28.0,
-                  title: 'Streaming Controls',
+                  title: '流媒体控制',
                   help:
-                      'If active, the streaming actions (start/stop) will be exposed in the dashboard view rather than in the action menu of the app bar. Makes it more accessible.',
+                      '如果处于活动状态，流操作（开始/停止）将显示在仪表板视图中，而不是显示在应用程序栏的操作菜单中。 使其更易于访问。',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(
                       SettingsKeys.ExposeStreamingControls.name,
@@ -81,9 +81,9 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: CupertinoIcons.recordingtape,
                   leadingSize: 30.0,
-                  title: 'Recording Controls',
+                  title: '录制控制',
                   help:
-                      'If active, the recording actions (start/stop/pause) will be exposed in the dashboard view rather than in the action menu of the app bar. Makes it more accessible.',
+                      '如果处于活动状态，录制操作（开始/停止/暂停）将显示在仪表板视图中，而不是显示在应用程序栏的操作菜单中。 使其更易于访问。',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(
                       SettingsKeys.ExposeRecordingControls.name,
@@ -100,9 +100,9 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: CupertinoIcons.reply_thick_solid,
                   leadingSize: 28.0,
-                  title: 'Replay Controls',
+                  title: '重播控制',
                   help:
-                      'If active, the replay buffer actions (start/stop/save) will be exposed in the dashboard view rather than in the action menu of the app bar. Makes it more accessible.',
+                      '如果处于活动状态，重播缓冲区操作（开始/停止/保存）将显示在仪表板视图中，而不是显示在应用程序栏的操作菜单中。 使其更易于访问。',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(
                       SettingsKeys.ExposeReplayBufferControls.name,
@@ -119,9 +119,9 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: CupertinoIcons.square_grid_3x2_fill,
                   leadingSize: 28.0,
-                  title: 'Hotkeys',
+                  title: '热键',
                   help:
-                      'If active, the hotkey button will be added to the dashboard which enables you to list all available OBS hotkeys and trigger them. Enables more precise interaction with OBS, usually only needed for power users.',
+                      '如果处于活动状态，热键按钮将添加到仪表板，使您能够列出所有可用的 OBS 热键并触发它们。 实现与OBS更精确的交互，通常只有高级用户才需要。',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(
                       SettingsKeys.ExposeHotkeys.name,
@@ -138,7 +138,7 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: CupertinoIcons.person_2_square_stack,
                   leadingSize: 30.0,
-                  title: 'Scene Preview',
+                  title: '场景预览',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(SettingsKeys.ExposeScenePreview.name,
                         defaultValue: true),
@@ -153,9 +153,9 @@ class DashboardCustomisationView extends StatelessWidget {
                 BlockEntry(
                   leading: CupertinoIcons.memories,
                   leadingSize: 30.0,
-                  title: 'Input Sync',
+                  title: '输入同步',
                   help:
-                      'In the advanced settings section for an audio input in OBS, you can adjust "Sync Offset" to align potential delays of other elements with your audio input so they get in sync again.\n\nTurning this on will expose this value for each audio input which also enables it to adjust these in the app.',
+                      '在 OBS 中音频输入的高级设置部分中，您可以调整“同步偏移”以将其他元素的潜在延迟与您的音频输入对齐，以便它们再次同步。\n\n打开此功能将为每个音频公开此值 输入，这也使其能够在应用程序中调整这些。',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(
                       SettingsKeys.ExposeInputAudioSyncOffset.name,

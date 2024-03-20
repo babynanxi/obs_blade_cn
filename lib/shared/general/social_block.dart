@@ -68,16 +68,16 @@ class SocialBlock extends StatelessWidget {
           );
         }
       } else {
-        throw 'Could not launch ${social.link}';
+        throw '无法启动 ${social.link}';
       }
     } catch (_) {
       ModalHandler.showBaseDialog(
         context: context,
         barrierDismissible: true,
         dialogWidget: InfoDialog(
-          title: 'Couldn\'t open link',
+          title: '无法打开链接',
           body:
-              'Couldn\'t open the following link on this device:\n\n${social.link}',
+              '无法在此设备上打开以下链接：\n\n${social.link}',
         ),
       );
     }

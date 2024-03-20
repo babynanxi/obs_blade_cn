@@ -83,7 +83,7 @@ class _FilterListState extends State<FilterList> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Filters',
+                    '过滤器',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                   Text(
@@ -92,7 +92,7 @@ class _FilterListState extends State<FilterList> {
                   ),
                   const SizedBox(height: 12.0),
                   const Text(
-                      'List of filters which are attached to the selected scene item.'),
+                      '附加到所选场景项目的过滤器列表.'),
                   const SizedBox(height: 24.0),
                   const BaseDivider(),
                 ],

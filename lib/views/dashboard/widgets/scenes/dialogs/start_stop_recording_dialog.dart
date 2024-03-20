@@ -18,10 +18,10 @@ class StartStopRecordingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConfirmationDialog(
-        title: '${this.isRecording ? 'Stop' : 'Start'} Recording',
+        title: '${this.isRecording ? '停止' : '启动'} Recording',
         body: this.isRecording
-            ? 'Do you want to stop recording? Got everything on tape as intended?\n\nIf yes: nice work!'
-            : 'Do you want to start recording? Recording unintentionally is not as bad as suddenly starting to stream!\n\nStill asking just to be sure!',
+            ? ' 您想停止录制吗？ 按预期将所有内容都记录在磁带上吗？\n\n'
+            : '你想开始录制吗？ 无意中录制并不像突然开始直播那么糟糕！\n\n还是想确认一下!',
         isYesDestructive: true,
         enableDontShowAgainOption: true,
         onOk: (checked) {

@@ -32,6 +32,9 @@ class _HomeViewState extends State<HomeView> {
   /// Since I'm using (at least one) reaction in this State, I need to dispose
   /// it when this Widget / State is disposing itself as well. I add each reaction call
   /// to this list and dispose every instance in the dispose call of this Widget
+  /// 由于我在这种状态下使用（至少一个）反应，所以我需要处理
+  /// 当这个 Widget/State 也正在处置自己时。 我添加每个反应调用
+  /// 到此列表并在此 Widget 的 dispose 调用中处置每个实例
   final List<mob_x.ReactionDisposer> _disposers = [];
 
   /// Using [didChangeDependencies] since it is called after [initState] and has access
@@ -58,6 +61,30 @@ class _HomeViewState extends State<HomeView> {
   /// To avoid that I added [SchedulerBinding.instance.addPostFrameCallback] which ensures that
   /// our dialog is pushed when the current build/render cycle is done, thats where our
   /// [pushReplacementNamed] is done and it is safe to use [Navigator] again
+     /// 使用 [didChangeDependency]，因为它是在 [initState] 之后调用并具有访问权限
+     /// 到我们需要访问 MobX 的 [StatelessWidget] 的 [BuildContext]
+     /// 通过Provider存储； 例如 GetIt.instance<NetworkStore>()
+     ///
+     /// 新：不使用 [didChangeDependency]，因为它经常被触发。
+     /// 最初我想使用它，因为我认为我可以访问上下文
+     /// 为该视图提供的 ViewModel 是可访问的，但由于上下文
+     /// 传递给我们的构建方法的是来自父级的方法，我们将无权访问
+     /// 以这种方式提供 ViewModel - 这就是我使用 Facade 模式的原因
+     /// 使用了 Wrapper Widget，其唯一目的是通过 Provider 公开 ViewModel
+     /// 并使其可以通过此处给定的上下文进行访问（新：这也已更改
+     /// 自从我切换到 GetIt 后，它在全局范围内注册商店（没有上下文）并且我们
+     /// 不需要以外观模式方式初始化它们并在 main 中执行，但现在需要
+     /// 重置这些存储）。 我在这里注册的反应只能注册一次
+     /// （利用反应和时间）这就是为什么它现在处于 [initState]
+     ///
+     /// 因为我在这里检查 [obsTermminate] 值是否为 true（这意味着我们来到了这个
+     /// 查看，因为 OBS 已终止）我想显示对话框，通知用户相关信息。
+     /// [initState] 将被相对较快地调用，在本例中是在
+     /// [pushReplacementNamed] 调用。 由于显示对话框也使用 [Navigator] 东西（它
+     /// 将把对话框压入堆栈）我们将得到一个指示该问题的异常。
+     /// 为了避免这种情况，我添加了 [SchedulerBinding.instance.addPostFrameCallback] 以确保
+     /// 当当前构建/渲染周期完成时，我们的对话框被推送，这就是我们的对话框
+     /// [pushReplacementNamed] 已完成，可以安全地再次使用 [Navigator]
   @override
   void initState() {
     super.initState();
@@ -76,6 +103,15 @@ class _HomeViewState extends State<HomeView> {
     /// in my Widget tree; I named the MobX import so now if I mean the MobX 'Listener' I would
     /// have to write 'MobX.Listener', otherwise it's the Material one. Since I'm using Material
     /// stuff here most of the time i named the MobX import instead ob the Material one
+         /// 由于 Widget Listener，我必须使用 'as MobX' 导入上面的 MobX 部分
+         /// 是 Material 和 MobX 的一部分，因此它无法单独解析。 经过
+         /// 命名一个导入我必须明确使用导入名称作为前缀
+         /// 定义我的意思是哪一个
+         ///
+         /// 这里的情况：“Listener”Widget 是 Material 和 MobX 的一部分； 我正在使用监听器
+         /// 在我的小部件树中； 我将 MobX 导入命名为 MobX 导入，所以现在如果我指的是 MobX“监听器”，我会
+         /// 必须写'MobX.Listener'，否则它就是Material 的。 由于我使用的是材质
+         /// 大多数时候我把 MobX 导入命名为 MobX import，而不是 Material 导入
     mob_x.when((_) => GetIt.instance<NetworkStore>().obsTerminated, () {
       SchedulerBinding.instance.addPostFrameCallback((_) {
         GeneralHelper.advLog(
@@ -100,6 +136,9 @@ class _HomeViewState extends State<HomeView> {
     /// Once we recognize a connection attempt inside our reaction ([connectionInProgress] is true)
     /// we will check whether the connection was successfull or not and display overlays and / or
     /// route to the [DashboardView]
+         /// 一旦我们在反应中识别出连接尝试（[connectionInProgress] 为 true）
+         /// 我们将检查连接是否成功并显示覆盖和/或
+         /// 路由到[DashboardView]
     _disposers.add(mob_x
         .reaction((_) => GetIt.instance<NetworkStore>().connectionInProgress,
             (bool connectionInProgress) {
@@ -129,6 +168,10 @@ class _HomeViewState extends State<HomeView> {
         /// it is due to providing a wrong password (or none at all) and we don't want to
         /// display an overlay for that - we trigger the validation of the password field
         /// in our [ConnectForm]
+        /// 如果连接尝试的错误导致“身份验证”错误，
+        /// 这是由于提供了错误的密码（或根本没有密码）而我们不想这样做
+        /// 显示覆盖层 - 我们触发密码字段的验证
+        /// 在我们的 [ConnectForm] 中
         else if ([
           WebSocketCloseCode.DontClose,
           WebSocketCloseCode.AuthenticationFailed
@@ -140,7 +183,7 @@ class _HomeViewState extends State<HomeView> {
               alignment: Alignment.center,
               child: BaseResult(
                 icon: BaseResultIcon.Negative,
-                text: 'Couldn\'t connect to a WebSocket.',
+                text: '无法连接到 WebSocket。',
               ),
             ),
           );

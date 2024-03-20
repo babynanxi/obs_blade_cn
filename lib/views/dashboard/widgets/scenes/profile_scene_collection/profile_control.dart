@@ -32,7 +32,7 @@ class ProfileControl extends StatelessWidget {
                   )
                   .toList() ??
               [],
-          label: 'Profile',
+          label: '配置文件',
           onChanged: (profileName) {
             if (profileName != dashboardStore.currentProfileName) {
               NetworkHelper.makeRequest(

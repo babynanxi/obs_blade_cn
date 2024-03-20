@@ -30,7 +30,7 @@ class PlaceholderConnection extends StatelessWidget {
                 icon: BaseResultIcon.Missing,
                 iconSize: 42.0,
                 text:
-                    'No saved connections yet...\nNo worries though, once you successfully connected to an OBS instance you can save one for later! :)',
+                    '尚未保存连接...\n不过不用担心，成功连接到 OBS 实例后，您可以保存一个以供以后使用！ :)',
               ),
             ),
           ),

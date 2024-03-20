@@ -41,7 +41,7 @@ class AboutHeader extends StatelessWidget {
               child: const BaseDivider(),
             ),
             Text(
-              'by Kounex (René Schramowski)',
+              'by Kounex ，nanxi',
               style: descriptionStyle,
             ),
             FutureBuilder<PackageInfo>(

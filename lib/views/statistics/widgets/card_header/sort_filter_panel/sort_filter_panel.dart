@@ -26,7 +26,7 @@ class SortFilterPanel extends StatelessWidget {
       children: [
         const BaseDivider(),
         CustomExpansionTile(
-          headerText: 'Sort and filter panel',
+          headerText: '排序和过滤面板',
           trailing: const Padding(
             padding: EdgeInsets.only(right: 12.0),
             child: FilterStatus(),
@@ -67,7 +67,7 @@ class SortFilterPanel extends StatelessWidget {
                         children: [
                           const ExcludeUnnamedCheckbox(),
                           BaseButton(
-                            text: 'Default',
+                            text: '默认',
                             onPressed: () =>
                                 GetIt.instance<StatisticsStore>().setDefaults(),
                           ),

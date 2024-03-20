@@ -18,10 +18,10 @@ class StartStopStreamingDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConfirmationDialog(
-      title: '${this.isLive ? 'Stop' : 'Start'} Streaming',
+      title: '${this.isLive ? '停止' : '启动'} Streaming',
       body: this.isLive
-          ? 'Are you sure you want to stop the stream? Nothing more to show or talk about? Or just tired or no time?\n\n... just to make sure it\'s intentional!'
-          : 'Are you sure you are ready to start the stream? Everything done? Stream title and description updated?\n\nIf yes: let\'s go!',
+          ? '您确定要停止直播吗？ '
+          : '您确定准备好开始直播了吗？ 一切都设置完成了吗？ ',
       isYesDestructive: true,
       enableDontShowAgainOption: true,
       onOk: (checked) {

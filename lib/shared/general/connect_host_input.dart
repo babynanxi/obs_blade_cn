@@ -130,9 +130,9 @@ class _ConnectHostInputState extends State<ConnectHostInput> {
                 )
               : null,
           labelText:
-              !this.widget.domainMode ? 'IP Address (internal)' : 'Hostname',
+              !this.widget.domainMode ? 'IP 地址（内网）' : '域名',
           placeholder:
-              !this.widget.domainMode ? '192.168.178.10' : 'obs-stream.com',
+              !this.widget.domainMode ? '192.168.1.10' : 'obs-stream.com',
           bottom: this.widget.manual
               ? Row(
                   children: [
@@ -141,7 +141,7 @@ class _ConnectHostInputState extends State<ConnectHostInput> {
                         groupValue: this.widget.domainMode,
                         children: const {
                           false: Text('IP'),
-                          true: Text('Domain'),
+                          true: Text('域名'),
                         },
                         onValueChanged: (domainMode) {
                           FocusManager.instance.primaryFocus?.unfocus();
@@ -156,7 +156,7 @@ class _ConnectHostInputState extends State<ConnectHostInput> {
                       const SizedBox(width: 12.0),
                       const QuestionMarkTooltip(
                         message:
-                            'IP mode expects an IP address and is using "ws://" as the protocol scheme (standard way to connect to a local OBS instance), while Domain mode does not have any input validation and you can select the protocol scheme yourself.\n\n"-" means I provide no protocol scheme and you have to add it yourself. I highly recommend making use of "ws://" or "wss://" though since it\'s usually what WebSockets use.',
+                            'IP 模式需要 IP 地址，并使用“ws://”作为协议方案（连接到本地 OBS 实例的标准方式），而域名模式没有任何输入验证，您可以自己选择协议方案。\n\n“-”表示我没有提供协议方案，你必须自己添加。 我强烈建议使用“ws://”或“wss://”，因为 WebSocket 通常使用它。',
                       ),
                     ],
                     // const SizedBox(width: 12.0),

@@ -15,7 +15,7 @@ class LicenseModal extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TransculentCupertinoNavBarWrapper(
-      title: 'Credits',
+      title: '制作人员',
       actions: ThemedCupertinoButton(
         padding: const EdgeInsets.all(0),
         text: 'Done',

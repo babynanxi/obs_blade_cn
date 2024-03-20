@@ -30,7 +30,7 @@ class CustomLogoRow extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Custom Logo',
+            '定制logo',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
           Padding(
@@ -86,8 +86,8 @@ class CustomLogoRow extends StatelessWidget {
         ],
       ),
       description:
-          'You can select your own logo which will be shown inside the app bar in the home tab (instead of the OBS Blade one)',
-      buttonText: 'Select',
+          '您可以选择自己的logo，该logo将显示在主页选项卡的应用程序栏中（而不是 OBS Blade 徽标）',
+      buttonText: '选择',
       onButtonPressed: () {
         ImagePicker().pickImage(source: ImageSource.gallery).then(
               (image) => image?.readAsBytes().then(
@@ -95,13 +95,13 @@ class CustomLogoRow extends StatelessWidget {
                   ),
             );
       },
-      resetButtonText: 'Clear',
+      resetButtonText: '清除',
       onResetButtonPressed: () => ModalHandler.showBaseDialog(
         context: context,
         dialogWidget: ConfirmationDialog(
-          title: 'Delete Logo',
+          title: '删除logo',
           body:
-              'Are you sure you want to remove your custom logo? You won\'t be able to get it back unless you select it again!',
+              '您确定要删除您的自定义logo吗？ 除非再次选择，否则您将无法取回它!',
           isYesDestructive: true,
           onOk: (_) => this.onReset(),
         ),

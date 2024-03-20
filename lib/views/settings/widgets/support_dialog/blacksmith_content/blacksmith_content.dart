@@ -30,7 +30,7 @@ class BlacksmithContent extends StatelessWidget {
           textAlign: TextAlign.center,
           textSpans: [
             TextSpan(
-              text: 'Become a blacksmith and forge your own OBS Blade',
+              text: '成为一名铁匠，打造属于你自己的 OBS 之刃',
               style: Theme.of(context).textTheme.titleLarge,
             ),
             const WidgetSpan(
@@ -42,7 +42,7 @@ class BlacksmithContent extends StatelessWidget {
             ),
             TextSpan(
               text:
-                  'Blacksmith offers you visual customisation options for this app to make it more personalised! Create your own theme to change the overall look and feel of this app to make it yours!',
+                  'Blacksmith 为您提供了该应用程序的视觉定制选项，使其更加个性化！ 创建您自己的主题来更改此应用程序的整体外观和感觉，使其成为您的主题！',
               style: Theme.of(context).textTheme.bodySmall,
             ),
           ],
@@ -74,12 +74,12 @@ class BlacksmithContent extends StatelessWidget {
               return DonateButton(
                 errorText: this.blacksmithDetails != null &&
                         this.blacksmithDetails!.isEmpty
-                    ? 'Could not retrieve App Store information! Please check your internet connection and try again. If this problem persists, please reach out to me, thanks!'
+                    ? '无法检索 App Store 信息！ 请检查您的互联网连接，然后重试。 如果问题依然存在，请联系我，谢谢！'
                     : null,
               );
             }
             return BaseButton(
-              text: 'Forge Theme',
+              text: '创建主题',
               secondary: true,
               onPressed: () {
                 Navigator.of(context).pop(true);
@@ -92,7 +92,7 @@ class BlacksmithContent extends StatelessWidget {
                     () => tabsStore.navigatorKeys[Tabs.Settings]?.currentState
                         ?.pushNamed(
                       SettingsTabRoutingKeys.CustomTheme.route,
-                      arguments: {'blacksmith': true},
+                      arguments: {'铁匠': true},
                     ),
                   );
                 }

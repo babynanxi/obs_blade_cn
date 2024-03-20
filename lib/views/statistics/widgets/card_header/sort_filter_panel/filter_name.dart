@@ -38,7 +38,7 @@ class _FilterNameState extends State<FilterName> {
   Widget build(BuildContext context) {
     return CupertinoTextField(
       controller: _controller,
-      placeholder: 'Filter by name...',
+      placeholder: '按名称过滤...',
       clearButtonMode: OverlayVisibilityMode.always,
       onChanged: (name) => GetIt.instance<StatisticsStore>().setFilterName(
         name.trim().toLowerCase(),

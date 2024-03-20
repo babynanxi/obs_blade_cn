@@ -13,9 +13,9 @@ class OBSWidgets extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Flexible(
+        /* Flexible(
           child: BaseCard(
-            title: 'Chat',
+            title: '聊天',
             rightPadding: 12.0,
             paddingChild: EdgeInsets.all(0),
             child: SizedBox(
@@ -25,10 +25,10 @@ class OBSWidgets extends StatelessWidget {
               ),
             ),
           ),
-        ),
+        ), */
         Flexible(
           child: BaseCard(
-            title: 'Stats',
+            title: '统计数据',
             leftPadding: 12.0,
             paddingChild: EdgeInsets.all(0),
             child: SizedBox(

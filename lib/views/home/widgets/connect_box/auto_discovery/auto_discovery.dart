@@ -30,20 +30,20 @@ class _AutoDiscoveryState extends State<AutoDiscovery> {
 
   String _processResult(AsyncSnapshot<List<Connection>> snapshot) {
     if (snapshot.error.toString().contains('NotInWLANException')) {
-      return 'Your Device is not connected via WLAN! Autodiscovery only works if you are connected to your local network via WLAN.';
+      return '您的设备未通过 WLAN 连接！ 仅当您通过 WLAN 连接到本地网络时，自动发现才起作用。';
     }
     if (snapshot.error.toString().contains('NoNetworkException')) {
-      return 'OBS Blade was not able to retrieve your local IP address so it can\'t perform an autodiscovery!\n\nMake sure your device is connected via WLAN and has an IP address assigned.';
+      return 'OBS Blade 无法检索您的本地 IP 地址，因此无法执行自动发现！\n\n请确保您的设备已通过 WLAN 连接并已分配 IP 地址。';
     }
     if (snapshot.hasData && snapshot.data!.isEmpty) {
       if (GetIt.instance<NetworkStore>().subnetMask != null &&
           GetIt.instance<NetworkStore>().nonDefaultSubnetMask) {
-        return 'Your network is using a "non default" subnet mask to assign local client ip addresses (${GetIt.instance<NetworkStore>().subnetMask}). Therefore OBS Blade can\'t reliably perform the autodiscovery.\n\nEither adjust the network settings of your router (if you really need autodiscovery) or use the Quick Connect or Manual mode!';
+        return '您的网络正在使用“非默认”子网掩码来分配本地客户端 IP 地址 (${GetIt.instance<NetworkStore>().subnetMask}). 因此 OBS Blade 无法可靠地执行自动发现。\n\n请调整路由器的网络设置（如果确实需要自动发现）或使用快速连接或手动模式！';
       }
-      return 'Could not find an open OBS session via autodiscovery! Make sure you have an open OBS session in your local network with the OBS WebSocket plugin installed!\n\nCheck the FAQ section in the settings tab.';
+      return '无法通过自动发现找到打开的 OBS 会话！ 确保您的本地网络中有一个打开的 OBS 会话，并且安装了 OBS WebSocket 插件！\n\n检查设置选项卡中的常见问题解答部分。';
     }
 
-    return 'Error occured! Either something is wrong with your WLAN connection or the app could not make use of autodiscovery.\n\nCheck the FAQ section in the settings tab.';
+    return '发生了错误！ 您的 WLAN 连接出现问题，或者应用程序无法使用自动发现。\n\n请检查设置选项卡中的常见问题解答部分。';
   }
 
   @override
@@ -60,12 +60,12 @@ class _AutoDiscoveryState extends State<AutoDiscovery> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Flexible(
-                child: Text('Port for autodiscovery: '),
+                child: Text('自动发现端口: '),
               ),
               SizedBox(width: 10.0),
               QuestionMarkTooltip(
                   message:
-                      'Usually 4455. Can be seen and changed in the WebSocket Plugin settings in OBS:\n\nTools -> WebSocket Server Settings'),
+                      '通常为 4455。可以在 OBS 的 WebSocket 插件设置中查看和更改：\n\n工具 -> WebSocket 服务器设置'),
             ],
           ),
         ),
@@ -128,7 +128,7 @@ class _AutoDiscoveryState extends State<AutoDiscovery> {
               return Fader(
                 child: SizedBox(
                   height: 150.0,
-                  child: BaseProgressIndicator(text: 'Searching...'),
+                  child: BaseProgressIndicator(text: '搜寻中...'),
                 ),
               );
             },

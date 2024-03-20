@@ -202,14 +202,14 @@ class _ColorPickerState extends State<ColorPicker> {
                 alignment: Alignment.centerLeft,
                 child: ThemedCupertinoButton(
                   padding: const EdgeInsets.symmetric(horizontal: 18.0),
-                  text: 'Reset',
+                  text: '重置颜色',
                   isDestructive: true,
                   onPressed: () => ModalHandler.showBaseDialog(
                     context: context,
                     dialogWidget: ConfirmationDialog(
-                      title: 'Reset Color',
+                      title: '重置颜色',
                       body:
-                          'Are you sure you want to reset this color? It will be set to it\'s initial value!',
+                          '您确定要重置此颜色吗？ 它将被设置为其初始值！',
                       isYesDestructive: true,
                       onOk: (_) => Navigator.of(context).pop(true),
                     ),
@@ -308,7 +308,7 @@ class _ColorPickerState extends State<ColorPicker> {
                           Padding(
                             padding: const EdgeInsets.only(right: 24.0),
                             child: Text(
-                              'Hex:',
+                              '16进制颜色:',
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ),

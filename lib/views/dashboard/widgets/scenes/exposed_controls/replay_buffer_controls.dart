@@ -39,7 +39,7 @@ class ReplayBufferControls extends StatelessWidget {
                       showDuration: const Duration(seconds: 10),
                       context: context,
                       content: BaseProgressIndicator(
-                        text: 'Stopping Replay Buffer...',
+                        text: '停止重播缓冲区...',
                       ),
                     );
                   }
@@ -56,7 +56,7 @@ class ReplayBufferControls extends StatelessWidget {
                 color: dashboardStore.isReplayBufferActive
                     ? CupertinoColors.destructiveRed
                     : CupertinoColors.activeGreen,
-                text: dashboardStore.isReplayBufferActive ? 'Stop' : 'Start',
+                text: dashboardStore.isReplayBufferActive ? '停止' : '启动',
               ),
             ),
             const SizedBox(width: kExposedControlsSpace),
@@ -69,7 +69,7 @@ class ReplayBufferControls extends StatelessWidget {
                     : null,
                 icon: const Icon(CupertinoIcons.arrow_down_doc_fill),
                 color: CupertinoColors.activeOrange,
-                text: 'Save',
+                text: '保存',
               ),
             ),
           ],

@@ -47,7 +47,7 @@ class GettingStarted extends StatelessWidget {
                         ),
                     textSpans: [
                       const TextSpan(
-                        text: 'An unofficial, ',
+                        text: '非官方的, ',
                       ),
                       WidgetSpan(
                         child: SocialBlock(
@@ -55,7 +55,7 @@ class GettingStarted extends StatelessWidget {
                           bottomPadding: 0,
                           socialInfos: [
                             SocialEntry(
-                              linkText: 'open source',
+                              linkText: '开源免费',
                               link: 'https://github.com/Kounex/obs_blade',
                               textStyle: Theme.of(context)
                                   .textTheme
@@ -69,7 +69,7 @@ class GettingStarted extends StatelessWidget {
                       ),
                       const TextSpan(
                         text:
-                            ' OBS controller to master your streams and recordings!\n\nMaking use of the beautiful, open source ',
+                            ' OBS 控制器来控制您的流和录音！ ',
                       ),
                       WidgetSpan(
                         child: SocialBlock(
@@ -91,7 +91,7 @@ class GettingStarted extends StatelessWidget {
                         ),
                       ),
                       const TextSpan(
-                        text: ' plugin!',
+                        text: ' 插件!',
                       ),
                     ],
                   ),
@@ -109,7 +109,7 @@ class GettingStarted extends StatelessWidget {
                 children: [
                   const BaseDivider(),
                   ThemedCupertinoButton(
-                    text: 'Start',
+                    text: '继续',
                     onPressed: () => GetIt.instance<IntroStore>()
                         .setStage(IntroStage.VersionSelection),
                   ),

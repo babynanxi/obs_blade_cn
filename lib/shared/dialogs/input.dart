@@ -76,10 +76,10 @@ class _InputDialogState extends State<InputDialog> {
       actions: [
         DialogActionConfig(
           isDestructiveAction: true,
-          child: const Text('Cancel'),
+          child: const Text('取消'),
         ),
         DialogActionConfig(
-          child: const Text('Save'),
+          child: const Text('保存'),
           popOnAction: false,
           onPressed: (_) {
             bool valid = true;

@@ -30,7 +30,7 @@ class StudioModeCheckbox extends StatelessWidget {
                 builder: (context) {
                   return BaseCheckbox(
                     value: dashboardStore.studioMode,
-                    text: 'Studio Mode',
+                    text: '工作室模式',
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     onChanged: (studioMode) => NetworkHelper.makeRequest(
                       GetIt.instance<NetworkStore>().activeSession!.socket,

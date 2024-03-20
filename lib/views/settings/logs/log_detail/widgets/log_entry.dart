@@ -63,7 +63,7 @@ class LogEntry extends StatelessWidget {
                   const SizedBox(height: 4.0),
                   FittedBox(
                     child: Text(
-                      '${this.logs.length} entries',
+                      '${this.logs.length} 日志列表',
                       style: Theme.of(context).textTheme.bodySmall,
                     ),
                   ),

@@ -155,7 +155,7 @@ class _ScenePreviewState extends State<ScenePreview> {
               SizedBox(
                 height: 150.0,
                 child: BaseProgressIndicator(
-                  text: 'Fetching preview...',
+                  text: '正在获取预览...',
                 ),
               ),
           ],
@@ -176,7 +176,7 @@ class _ScenePreviewState extends State<ScenePreview> {
       builder: (context, settingsBox, child) => settingsBox
               .get(SettingsKeys.ExposeScenePreview.name, defaultValue: true)
           ? CustomExpansionTile(
-              headerText: 'Current OBS scene preview',
+              headerText: '当前OBS场景预览',
               manualExpand: (expandFunction, expanded) {
                 // ignore: prefer_function_declarations_over_variables
                 VoidCallback onExpand = () {

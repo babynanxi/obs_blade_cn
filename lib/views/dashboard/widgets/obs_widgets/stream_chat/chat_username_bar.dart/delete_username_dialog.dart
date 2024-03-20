@@ -19,9 +19,9 @@ class DeleteUsernameDialog extends StatelessWidget {
         .get(SettingsKeys.SelectedChatType.name, defaultValue: ChatType.Twitch);
 
     return ConfirmationDialog(
-      title: 'Delete ${chatType.text} Username',
+      title: '删除 ${chatType.text} 用户名',
       body:
-          'Are you sure you want to delete the currently selected ${chatType.text} username? This action can\'t be undone!',
+          '您确定要删除 ${chatType.text} 用户名？ 此操作无法撤消!',
       isYesDestructive: true,
       onOk: (_) {
         if (chatType == ChatType.Twitch) {

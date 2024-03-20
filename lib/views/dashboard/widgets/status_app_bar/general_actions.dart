@@ -51,7 +51,7 @@ class GeneralActions extends StatelessWidget {
                     defaultValue: false))
                   AppBarActionEntry(
                     title:
-                        '${dashboardStore.isLive ? 'Stop' : 'Start'} Streaming',
+                        '${dashboardStore.isLive ? '停止' : '启动'} 推流',
                     leadingIcon: CupertinoIcons.dot_radiowaves_left_right,
                     onAction: () => RecordStreamService.triggerStreamStartStop(
                       context,
@@ -68,7 +68,7 @@ class GeneralActions extends StatelessWidget {
                     defaultValue: false)) ...[
                   AppBarActionEntry(
                     title:
-                        '${dashboardStore.isRecording ? 'Stop' : 'Start'} Recording',
+                        '${dashboardStore.isRecording ? '停止' : '启动'} 录制',
                     leadingIcon: CupertinoIcons.recordingtape,
                     onAction: () => RecordStreamService.triggerRecordStartStop(
                       context,
@@ -83,7 +83,7 @@ class GeneralActions extends StatelessWidget {
                   ),
                   AppBarActionEntry(
                     title:
-                        '${dashboardStore.isRecordingPaused ? 'Resume' : 'Pause'} Recording',
+                        '${dashboardStore.isRecordingPaused ? '恢复' : '暂停'} 录制',
                     leadingIcon: CupertinoIcons.playpause_fill,
                     onAction: dashboardStore.isRecording
                         ? () => NetworkHelper.makeRequest(
@@ -98,7 +98,7 @@ class GeneralActions extends StatelessWidget {
                     defaultValue: false)) ...[
                   AppBarActionEntry(
                     title:
-                        '${dashboardStore.isReplayBufferActive ? 'Stop' : 'Start'} Replay Buffer',
+                        '${dashboardStore.isReplayBufferActive ? '停止' : '启动'} 重放缓冲区',
                     leadingIcon: CupertinoIcons.reply_thick_solid,
                     onAction: () {
                       if (dashboardStore.isReplayBufferActive) {
@@ -106,7 +106,7 @@ class GeneralActions extends StatelessWidget {
                           showDuration: const Duration(seconds: 10),
                           context: context,
                           content: BaseProgressIndicator(
-                            text: 'Stopping Replay Buffer...',
+                            text: '停止重播缓冲区...',
                           ),
                         );
                       }
@@ -117,7 +117,7 @@ class GeneralActions extends StatelessWidget {
                     },
                   ),
                   AppBarActionEntry(
-                    title: 'Save Replay Buffer',
+                    title: '保存重播缓冲区',
                     leadingIcon: CupertinoIcons.arrow_down_doc_fill,
                     onAction: dashboardStore.isReplayBufferActive
                         ? () => NetworkHelper.makeRequest(
@@ -129,7 +129,7 @@ class GeneralActions extends StatelessWidget {
                 ],
                 AppBarActionEntry(
                   title:
-                      '${dashboardStore.isVirtualCamActive ? 'Stop' : 'Start'} Virtual Camera',
+                      '${dashboardStore.isVirtualCamActive ? '停止' : '启动'} Virtual Camera',
                   leadingIcon: CupertinoIcons.camera_on_rectangle_fill,
                   onAction: () {
                     NetworkHelper.makeRequest(
@@ -139,7 +139,7 @@ class GeneralActions extends StatelessWidget {
                   },
                 ),
                 AppBarActionEntry(
-                  title: 'Take OBS Screenshot',
+                  title: '截取 OBS 截图',
                   leadingIcon: CupertinoIcons.square_stack_3d_down_right_fill,
                   onAction: () {
                     /// Intentionally having a different file format used for
@@ -154,6 +154,18 @@ class GeneralActions extends StatelessWidget {
                     /// We also have to do this request in this batch format
                     /// due to API inconsistency -> check the comment of
                     /// [RequestBatchType.Screenshot]
+                     /// 故意使用不同的文件格式
+                     /// 请求的 [imageFormat] 字段和该字段
+                     /// 用作文件的扩展名。 如果可以的话，我们希望
+                     /// 将屏幕截图保存为 png，就像 OBS 所做的那样，但是
+                     /// 在这里这样做时，透明度被正确使用
+                     /// OBS 不这样做...所以我宁愿这样做
+                     /// OBS本身就是这样做的（使用png但不透明）
+                     /// 提供相同的体验
+                     ///
+                     /// 我们还必须以这种批处理格式执行此请求
+                     /// 由于 API 不一致 -> 检查注释
+                     /// [RequestBatchType.Screenshot]
                     NetworkHelper.makeBatchRequest(
                       networkStore.activeSession!.socket,
                       RequestBatchType.Screenshot,
@@ -191,7 +203,7 @@ class GeneralActions extends StatelessWidget {
                 ),
                 AppBarActionEntry(
                   title:
-                      '${dashboardStore.editSceneVisibility ? 'Finish' : 'Edit'} Scene Visibility',
+                      '${dashboardStore.editSceneVisibility ? '结束' : '编辑'} Scene Visibility',
                   leadingIcon: CupertinoIcons.eyeglasses,
                   onAction: dashboardStore.editSceneVisibility
                       ? () {
@@ -214,12 +226,12 @@ class GeneralActions extends StatelessWidget {
                                   // title: 'Warning on hiding scenes',
                                   // body:
                                   //     'Unfortunately OBS WebSocket only transmits the scene name, nothing else. Therefore I can\'t distinguish between a scene from one specific OBS instance.\n\nUsing a saved connection is advised because then I can bound the scene name to the saved connection - otherwise trying with the ip address which might cause trouble but is still better than nothing!',
-                                  title: 'Warning on hiding scene elements',
+                                  title: '关于隐藏场景元素的警告',
                                   body:
-                                      'Unfortunately OBS WebSocket only gives limit information about scenes and their elements for me to reliably match them with different connections etc.\n\nTo ensure maximum compatibility, please save your connections so I can bound hidden elements to a saved connection.',
+                                      '关于隐藏场景元素的警告不幸的是，OBS WebSocket 仅提供有关场景及其元素的有限信息，以便我能够可靠地将它们与不同的连接等进行匹配。\n\n为了确保最大兼容性，请保存您的连接，以便我可以将隐藏元素绑定到已保存的连接。',
                                   enableDontShowAgainOption: true,
-                                  noText: 'Cancel',
-                                  okText: 'Ok',
+                                  noText: '取消',
+                                  okText: '确认',
                                   onOk: (checked) {
                                     settingsBox.put(
                                         SettingsKeys
@@ -235,7 +247,7 @@ class GeneralActions extends StatelessWidget {
                             },
                 ),
                 AppBarActionEntry(
-                  title: '${newConnection ? 'Save' : 'Edit'} Connection',
+                  title: '${newConnection ? '关闭' : '编辑'} Connection',
                   leadingIcon: CupertinoIcons.pencil_ellipsis_rectangle,
                   onAction: () {
                     ModalHandler.showBaseDialog(

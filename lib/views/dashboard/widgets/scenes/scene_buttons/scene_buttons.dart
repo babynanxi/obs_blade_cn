@@ -117,7 +117,7 @@ class SceneButtons extends StatelessWidget {
           if (sceneButtons == null || sceneButtons.isEmpty) {
             return const Center(
               child: Text(
-                'No Scenes available',
+                '没有可用的场景',
               ),
             );
           }

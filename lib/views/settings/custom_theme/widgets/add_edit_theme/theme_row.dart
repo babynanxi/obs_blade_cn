@@ -54,7 +54,7 @@ class ThemeRow extends StatelessWidget {
                 context: context,
                 builder: (context) => ColorPicker(
                   title: this.title ?? 'Title',
-                  description: this.description ?? 'Description',
+                  description: this.description ?? '描述',
                   color: this.colorHex,
                   onSave: (colorHex) => this.onSave?.call(colorHex),
                 ),
@@ -97,7 +97,7 @@ class ThemeRow extends StatelessWidget {
                         SizedBox(
                           width: double.infinity,
                           child: BaseButton(
-                            text: this.buttonText ?? 'Button',
+                            text: this.buttonText ?? '按钮',
                             onPressed: this.onButtonPressed,
                           ),
                         ),
@@ -105,7 +105,7 @@ class ThemeRow extends StatelessWidget {
                           SizedBox(
                             width: double.infinity,
                             child: BaseButton(
-                              text: this.resetButtonText ?? 'Button',
+                              text: this.resetButtonText ?? '按钮',
                               isDestructive: true,
                               onPressed: this.onResetButtonPressed,
                             ),
@@ -123,7 +123,7 @@ class ThemeRow extends StatelessWidget {
                             child: Text(
                               this.colorHex != null
                                   ? '#${this.colorHex}'
-                                  : 'Transparent',
+                                  : '透明',
                             ),
                           ),
                         ),

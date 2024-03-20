@@ -62,7 +62,7 @@ class _SceneItemsState extends State<SceneItems>
                   : [
                       const SizedBox(height: 12.0),
                       const PlaceholderSceneItem(
-                          text: 'No Scene Items available...')
+                          text: '没有可用的场景项目...')
                     ]
             ],
           ),

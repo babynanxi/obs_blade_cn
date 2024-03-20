@@ -15,17 +15,17 @@ class LogExplanation extends StatelessWidget {
     return BaseCard(
       bottomPadding: 12.0,
       child: CustomExpansionTile(
-        headerText: 'Information about logs',
+        headerText: '有关日志的信息',
         headerPadding: const EdgeInsets.all(0.0),
         expandedBody: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 12.0),
             const Text(
-                'Logs listed here have been created programmatically by me and are only available locally. I\'m not sending them to any servers or alike. You can view them here and decide to share them (for example with me) if you encounter any problems and would like to give me more information to work on or even want to try to figure out the problem on your own!'),
+                '此处列出的日志是我以编程方式创建的，并且仅在本地可用。 我不会将它们发送到任何服务器或类似服务器。 如果您遇到任何问题并且愿意为我提供更多信息以供处理，或者甚至想尝试自己解决问题，您可以在这里查看它们并决定分享它们（例如与我分享）！'),
             const SizedBox(height: 12.0),
             const Text(
-                'You can delete log entries selectively here or all together in "Data Management" in the settings tab.'),
+                '您可以在此处有选择地删除日志条目，也可以在设置选项卡的“数据管理”中一起删除日志条目.'),
             const SizedBox(height: 12.0),
             const Text('Used log types:'),
             const SizedBox(height: 4.0),
@@ -35,7 +35,7 @@ class LogExplanation extends StatelessWidget {
                   customEntry: ThemedRichText(
                     textSpans: [
                       TextSpan(
-                        text: 'Info',
+                        text: '输出',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: LogLevel.Info.color,
@@ -44,7 +44,7 @@ class LogExplanation extends StatelessWidget {
                       ),
                       const TextSpan(
                         text:
-                            ': triggered by used packages or manually by myself to provide helpful informations',
+                            ': 由使用过的软件包触发或由我自己手动触发以提供有用的信息',
                       ),
                     ],
                   ),
@@ -53,7 +53,7 @@ class LogExplanation extends StatelessWidget {
                   customEntry: ThemedRichText(
                     textSpans: [
                       TextSpan(
-                        text: 'Warning',
+                        text: '警告',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: LogLevel.Warning.color,
@@ -62,7 +62,7 @@ class LogExplanation extends StatelessWidget {
                       ),
                       const TextSpan(
                         text:
-                            ': triggered manually by me to log important informations / events',
+                            ':由我手动触发以记录重要信息/事件',
                       ),
                     ],
                   ),
@@ -71,7 +71,7 @@ class LogExplanation extends StatelessWidget {
                   customEntry: ThemedRichText(
                     textSpans: [
                       TextSpan(
-                        text: 'Error',
+                        text: '错误',
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: LogLevel.Error.color,
@@ -80,7 +80,7 @@ class LogExplanation extends StatelessWidget {
                       ),
                       const TextSpan(
                         text:
-                            ': triggered by different kind of exceptions and (mostly) unintended events',
+                            ':  由不同类型的异常和（大部分）意外事件触发',
                       ),
                     ],
                   ),
@@ -89,7 +89,7 @@ class LogExplanation extends StatelessWidget {
             ),
             const SizedBox(height: 12.0),
             const Text(
-                'Logs are grouped by days and can be filtered to find the relevant ones easier. Feel free to suggest improvements!')
+                '日志按天分组，并且可以进行过滤以更轻松地找到相关日志。 请随时提出改进建议！')
           ],
         ),
       ),

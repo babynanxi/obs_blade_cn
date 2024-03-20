@@ -41,8 +41,8 @@ class CustomThemeList extends StatelessWidget {
                     icon: BaseResultIcon.Missing,
                     iconSize: 42.0,
                     text: this.predefinedThemes
-                        ? 'No predefined themes available!'
-                        : 'No custom themes created yet!',
+                        ? '没有可用的预定义主题!'
+                        : '尚未创建自定义主题!',
                   ),
                 ),
               );

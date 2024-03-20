@@ -23,10 +23,10 @@ class OBSWidgetsMobile extends StatelessWidget {
                 child: const TabBar(
                   tabs: [
                     Tab(
-                      child: Text('Chat'),
+                      child: Text('聊天'),
                     ),
                     Tab(
-                      child: Text('Stats'),
+                      child: Text('统计数据'),
                     )
                   ],
                 ),

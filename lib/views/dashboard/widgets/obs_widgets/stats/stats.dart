@@ -53,10 +53,10 @@ class _StatsState extends State<Stats> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width,
                   child: StatsContainer(
-                    title: 'OBS Stats',
+                    title: 'OBS 统计数据',
                     trailing: const QuestionMarkTooltip(
                         message:
-                            'Stats marked with * are stats of OBS and not your computer.'),
+                            '带*的统计数据是OBS的统计数据，而不是您的计算机的统计数据.'),
                     children: [
                       FormattedText(
                         label: 'FPS',
@@ -74,7 +74,7 @@ class _StatsState extends State<Stats> {
                         width: 75.0,
                       ),
                       FormattedText(
-                        label: 'Memory Usage*',
+                        label: '内存使用情况*',
                         unit: ' GB',
                         text: dashboardStore.latestOBSStats?.memoryUsage != null
                             ? (dashboardStore.latestOBSStats!.memoryUsage /
@@ -84,7 +84,7 @@ class _StatsState extends State<Stats> {
                         width: 100.0,
                       ),
                       FormattedText(
-                        label: 'Available Disk Space',
+                        label: '可用磁盘空间',
                         unit: ' GB',
                         text:
                             dashboardStore.latestOBSStats?.availableDiskSpace !=
@@ -97,7 +97,7 @@ class _StatsState extends State<Stats> {
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Average Frame Render Time',
+                        label: '平均帧渲染时间',
                         unit: ' milliseconds',
                         text: dashboardStore
                             .latestOBSStats?.averageFrameRenderTime
@@ -105,13 +105,13 @@ class _StatsState extends State<Stats> {
                         width: 160.0,
                       ),
                       FormattedText(
-                        label: 'Total Render Frames',
+                        label: '总渲染帧数',
                         text: dashboardStore.latestOBSStats?.renderTotalFrames
                             .toString(),
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Skipped Render Frames',
+                        label: '跳过渲染帧',
                         text: dashboardStore.latestOBSStats?.renderSkippedFrames
                             .toString(),
                         width: 140.0,
@@ -122,10 +122,10 @@ class _StatsState extends State<Stats> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width,
                   child: StatsContainer(
-                    title: 'Stream',
+                    title: '推流',
                     children: [
                       FormattedText(
-                        label: 'Session Time',
+                        label: '推流时长',
                         text: dashboardStore.latestStreamStats?.totalTime
                             .secondsToFormattedDurationString(),
                         width: 100,
@@ -137,28 +137,28 @@ class _StatsState extends State<Stats> {
                         width: 80,
                       ),
                       FormattedText(
-                        label: 'Total Output Frames',
+                        label: '总输出帧数',
                         text: dashboardStore
                             .latestStreamStats?.outputTotalFrames
                             .toString(),
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Skipped Output Frames',
+                        label: '跳过的输出帧',
                         text: dashboardStore
                             .latestStreamStats?.outputSkippedFrames
                             .toString(),
                         width: 135.0,
                       ),
                       FormattedText(
-                        label: 'Total Render Frames',
+                        label: '总渲染帧数',
                         text: dashboardStore
                             .latestStreamStats?.renderTotalFrames
                             .toString(),
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Skipped Render Frames',
+                        label: '跳过渲染帧',
                         text: dashboardStore
                             .latestStreamStats?.renderSkippedFrames
                             .toString(),
@@ -170,10 +170,10 @@ class _StatsState extends State<Stats> {
                 SizedBox(
                   width: MediaQuery.sizeOf(context).width,
                   child: StatsContainer(
-                    title: 'Recording',
+                    title: '录制',
                     children: [
                       FormattedText(
-                        label: 'Session Time',
+                        label: '录制时长',
                         text: dashboardStore.latestRecordStats?.totalTime
                             .secondsToFormattedDurationString(),
                         width: 100,
@@ -185,7 +185,7 @@ class _StatsState extends State<Stats> {
                         width: 80,
                       ),
                       FormattedText(
-                        label: 'Total Output Frames',
+                        label: '总输出帧数',
                         text: dashboardStore.isRecording
                             ? dashboardStore
                                 .latestRecordStats?.outputTotalFrames
@@ -194,7 +194,7 @@ class _StatsState extends State<Stats> {
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Skipped Output Frames',
+                        label: '跳过的输出帧',
                         text: dashboardStore.isRecording
                             ? dashboardStore
                                 .latestRecordStats?.outputSkippedFrames
@@ -203,7 +203,7 @@ class _StatsState extends State<Stats> {
                         width: 135.0,
                       ),
                       FormattedText(
-                        label: 'Total Render Frames',
+                        label: '总渲染帧数',
                         text: dashboardStore.isRecording
                             ? dashboardStore
                                 .latestRecordStats?.renderTotalFrames
@@ -212,7 +212,7 @@ class _StatsState extends State<Stats> {
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Skipped Render Frames',
+                        label: '跳过渲染帧',
                         text: dashboardStore.isRecording
                             ? dashboardStore
                                 .latestRecordStats?.renderSkippedFrames

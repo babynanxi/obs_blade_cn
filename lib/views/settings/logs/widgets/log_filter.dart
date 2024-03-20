@@ -39,7 +39,7 @@ class LogFilter extends StatelessWidget {
                       items: [
                         const DropdownMenuItem(
                           value: null,
-                          child: Text('All'),
+                          child: Text('全部'),
                         ),
                         ...LogLevel.values.map(
                           (logLevel) => DropdownMenuItem(
@@ -65,7 +65,7 @@ class LogFilter extends StatelessWidget {
                         ),
                         const DropdownMenuItem(
                           value: null,
-                          child: Text('All'),
+                          child: Text('全部'),
                         ),
                       ],
                       onChanged: (amount) =>

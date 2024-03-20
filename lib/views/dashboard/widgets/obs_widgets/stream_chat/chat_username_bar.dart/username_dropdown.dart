@@ -30,7 +30,7 @@ class UsernameDropdown extends StatelessWidget {
           },
           isExpanded: true,
           disabledHint: const Text(
-            'No usernames',
+            '没有用户名',
             maxLines: 1,
             softWrap: false,
             overflow: TextOverflow.fade,

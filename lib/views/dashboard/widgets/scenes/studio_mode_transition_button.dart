@@ -54,7 +54,7 @@ class StudioModeTransitionButton extends StatelessWidget {
                     child: SizedBox(
                       width: 128.0,
                       child: BaseButton(
-                        text: 'Transition',
+                        text: '切换',
                         secondary: true,
                         onPressed: () {
                           dashboardStore.setActiveSceneName(

@@ -12,9 +12,9 @@ enum ConnectMode {
   Manual;
 
   String get text => {
-        ConnectMode.Autodiscover: 'Autodiscover',
-        ConnectMode.QR: 'Quick Connect',
-        ConnectMode.Manual: 'Manual',
+        ConnectMode.Autodiscover: '自动查找',
+        ConnectMode.QR: '扫描二维码',
+        ConnectMode.Manual: '手动输入',
       }[this]!;
 }
 

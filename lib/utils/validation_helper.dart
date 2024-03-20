@@ -6,8 +6,8 @@ class ValidationHelper {
   static String? minLengthValidator(String? text, [int minLength = 1]) =>
       text == null || text.length < minLength
           ? (minLength == 1
-              ? 'Input may not be empty!'
-              : 'Input needs at least $minLength characters!')
+              ? '输入不能为空！'
+              : '输入至少需要 $minLength 字!')
           : null;
 
   static String? portValidator(String? text) {
@@ -15,7 +15,7 @@ class ValidationHelper {
     if (port != null && port > 0 && port <= 65535) {
       return null;
     }
-    return 'Invalid port';
+    return '端口无效';
   }
 
   static String? ipValidator(String? text) {
@@ -29,7 +29,7 @@ class ValidationHelper {
             int.parse(part) <= 255)) {
       return null;
     }
-    return 'Not an IP address!';
+    return '不是 IP 地址!';
   }
 
   static String? colorHexValidator(String? text, {bool useAlpha = false}) {
@@ -38,7 +38,7 @@ class ValidationHelper {
         (RegExp(r'^[a-fA-F0-9]+$').allMatches(text).isNotEmpty)) {
       return null;
     }
-    return 'Not a valid color hex code!';
+    return '颜色十六进制代码无效!';
   }
 
   static String? colorTypeValidator(String? text, ColorType type) {

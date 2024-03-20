@@ -32,7 +32,7 @@ class SceneCollectionControl extends StatelessWidget {
                   )
                   .toList() ??
               [],
-          label: 'Scene Collection',
+          label: '场景集合',
           onChanged: (sceneCollection) {
             if (sceneCollection != dashboardStore.currentSceneCollectionName) {
               NetworkHelper.makeRequest(

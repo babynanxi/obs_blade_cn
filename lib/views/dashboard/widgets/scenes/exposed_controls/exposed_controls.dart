@@ -34,7 +34,7 @@ class ExposedControls extends StatelessWidget {
             defaultValue: false)) {
           exposedControls.add(
             DescribedBox(
-              label: 'Stream',
+              label: '推流',
               borderColor: Theme.of(context).dividerColor,
               child: const Center(
                 child: StreamingControls(),
@@ -47,7 +47,7 @@ class ExposedControls extends StatelessWidget {
             defaultValue: false)) {
           exposedControls.add(
             DescribedBox(
-              label: 'Recording',
+              label: '录制',
               borderColor: Theme.of(context).dividerColor,
               child: const RecordingControls(),
             ),
@@ -58,7 +58,7 @@ class ExposedControls extends StatelessWidget {
             defaultValue: false)) {
           exposedControls.add(
             DescribedBox(
-              label: 'Replay Buffer',
+              label: '重放缓冲区',
               borderColor: Theme.of(context).dividerColor,
               child: const ReplayBufferControls(),
             ),
@@ -69,7 +69,7 @@ class ExposedControls extends StatelessWidget {
             defaultValue: false)) {
           exposedControls.add(
             DescribedBox(
-              label: 'Hotkeys',
+              label: '热键',
               borderColor: Theme.of(context).dividerColor,
               child: const HotkeysControl(),
             ),
@@ -94,7 +94,7 @@ class ExposedControls extends StatelessWidget {
                 bottomPadding: 0.0,
                 paddingChild: const EdgeInsets.symmetric(vertical: 18.0),
                 child: CustomExpansionTile(
-                  headerText: 'Exposed Controls',
+                  headerText: '显示的控件',
                   headerPadding: const EdgeInsets.symmetric(horizontal: 18.0),
                   expandedBody: Column(
                     children: [

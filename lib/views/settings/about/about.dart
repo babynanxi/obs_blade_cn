@@ -42,18 +42,18 @@ class AboutView extends StatelessWidget {
                         textSpans: [
                           TextSpan(
                               text:
-                                  'Hope you enjoy using OBS Blade. If you want to get in touch me with, you can visit those sites and message me. For now this is also the preferred way to let me know of any bugs / problems / feature requests. I will add some '),
+                                  '希望您喜欢使用 OBS Blade。 如果您想与我联系，可以访问这些网站并向我发送消息。 目前，这也是让我了解任何错误/问题/功能请求的首选方式。 我会添加一些 '),
                           TextSpan(
-                            text: 'real',
+                            text: '真实的',
                             style: TextStyle(
                               fontStyle: FontStyle.italic,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          TextSpan(text: ' ways to do that in the future.'),
+                          TextSpan(text: ' 未来如何做到这一点。\n\n'),
                         ],
                       ),
-                      SocialBlock(
+                      /* SocialBlock(
                         socialInfos: [
                           SocialEntry(
                             // svgPath: 'assets/svgs/twitter.svg',
@@ -76,9 +76,9 @@ class AboutView extends StatelessWidget {
                             linkText: 'contact@kounex.com',
                           ),
                         ],
-                      ),
+                      ), */
                       const Text(
-                          'OBS Blade is open source which means you can take look behind the scenes and see the actual source code. I might need to hide some sensitive stuff like keys / tokens / credentials (obviously), but everything else should be accessible.'),
+                          'OBS Blade 是开源的，这意味着您可以了解幕后并查看实际的源代码。 我可能需要隐藏一些敏感的东西，例如密钥/令牌/凭据（显然），但其他所有内容都应该可以访问。'),
                       SocialBlock(
                         socialInfos: [
                           SocialEntry(
@@ -89,9 +89,23 @@ class AboutView extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Text(
-                          'This app (as in a lot of cases) started as a small passion project since I wanted to be able to control OBS on the fly without the need of any third party apps / devices. Sometimes I stream some stuff myself - gaming related - so if you want to drop by:'),
+
+                      const Padding(padding: EdgeInsets.only(top: 14.0, bottom: 8.0)),
+
+                      const Text('翻译工作由南兮完成'),
                       SocialBlock(
+                        socialInfos: [
+                          SocialEntry(
+                            // svgPath: 'assets/svgs/twitter.svg',
+                            icon: JamIcons.github,
+                            link: 'https://github.com/babynanxi',
+                            linkText: 'GitHub',
+                          ),
+                        ],
+                      ),
+                      const Text(
+                          '这个应用程序（在很多情况下）最初是一个小型的热情项目，因为我希望能够在不需要任何第三方应用程序/设备的情况下动态控制 OBS。 有时我会自己直播一些与游戏相关的内容，所以如果你想顺便过来一下:'),
+                      /* SocialBlock(
                         socialInfos: [
                           SocialEntry(
                             // svgPath: 'assets/svgs/twitter.svg',
@@ -100,16 +114,16 @@ class AboutView extends StatelessWidget {
                             linkText: 'Twitch',
                           ),
                         ],
-                      ),
+                      ), */
                       const BaseDivider(),
                       const Padding(
                         padding: EdgeInsets.only(top: 14.0, bottom: 8.0),
                         child: Text(
-                            'For a short overview of the used libraries, you can take a look here:'),
+                            '有关所用库的简短概述，您可以查看此处：'),
                       ),
                       Builder(builder: (context) {
                         return BaseButton(
-                          text: 'Credits',
+                          text: '制作人员',
                           onPressed: () =>
                               // showAboutDialog(context: context),
                               ModalHandler.showBaseCupertinoBottomSheet(

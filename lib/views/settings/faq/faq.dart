@@ -17,8 +17,8 @@ class FAQView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: TransculentCupertinoNavBarWrapper(
-        previousTitle: 'Settings',
-        title: 'FAQ | Help',
+        previousTitle: '设置',
+        title: 'FAQ | 帮助',
         listViewChildren: [
           Padding(
             padding: const EdgeInsets.only(
@@ -39,7 +39,7 @@ class FAQView extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 8.0),
                     child: Text(
-                      'Frequently Asked Questions',
+                      '经常问的问题',
                       style: Theme.of(context).textTheme.headlineSmall,
                     ),
                   ),
@@ -52,70 +52,70 @@ class FAQView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                    'Since I received several questions and problems regarding using OBS Blade, I tried to compile some information here which might help others as well if they encounter problems or are not sure about some functions / possibilities.'),
+                    '由于我收到了一些有关使用 OBS Blade 的疑问和问题，因此我尝试在这里整理一些信息，如果其他人遇到问题或不确定某些功能/可能性，这些信息也可能会对其他人有所帮助。'),
                 BaseDivider(height: 32),
                 FAQBlock(
-                  heading: 'Autodiscover does not find my OBS instance, why?',
+                  heading: '为什么自动发现找不到我的 OBS 实例？',
                   customBody: EnumerationBlock(
                     title:
-                        'There are several things which have to be checked for that problem:',
+                        '对于该问题，必须检查几件事:',
                     customEntries: [
                       EnumerationEntry(
                         text:
-                            'Make sure you are on the latest version of OBS, OBS WebSocket and OBS Blade',
+                            '确保您使用的是最新版本的 OBS、OBS WebSocket 和 OBS Blade',
                       ),
                       EnumerationEntry(
                         text:
-                            'Your device using OBS Blade needs to be connected via WLAN and needs to be in the same network as the device running OBS',
+                            '使用OBS Blade的设备需要通过 WLAN 连接，并且需要与运行OBS的设备在同一网络中',
                       ),
                       EnumerationEntry(
                         text:
-                            'The port where OBS is running is not opened. Your firewall might block this port or your router might not allow communicating with this port',
+                            'OBS运行的端口未打开。您的防火墙可能会阻止该端口，或者您的路由器可能不允许与该端口通信',
                       ),
                       EnumerationEntry(
                         text:
-                            'On iOS: make sure you enabled the "Local Network Permission" in your phone settings:\nSettings > Privacy > Local Network > OBS Blade',
+                            '在iOS上：确保您在手机设置中启用了 "本地网络权限" 在您的手机设置中:\设置 > 隐私 > 本地网络 > OBS Blade',
                       ),
                       EnumerationEntry(
                         text:
-                            'Additionally to being in the same network, they also have to be in the same IP range (subnet). By default, devices being in different subnets cannot communicate with each other. Make sure only the last digit of the IP address differ:',
-                      ),
-                      EnumerationEntry(
-                        level: 2,
-                        text:
-                            '192.168.178.20 (OBS)\n192.168.120.90 (OBS Blade)\nwon\'t work!',
+                            '除了在同一网络中之外，它们还必须处于相同的IP范围（子网）。默认情况下，位于不同子网中的设备无法相互通信。请确保IP地址仅最后一位数字不同:',
                       ),
                       EnumerationEntry(
                         level: 2,
                         text:
-                            '192.168.178.20 (OBS)\n192.168.178.90 (OBS Blade)\nwill work!',
+                            '192.168.178.20 (OBS)\n192.168.120.90 (OBS Blade)\n错误的!',
+                      ),
+                      EnumerationEntry(
+                        level: 2,
+                        text:
+                            '192.168.178.20 (OBS)\n192.168.178.90 (OBS Blade)\n正确的!',
                       ),
                     ],
                   ),
                 ),
                 SizedBox(height: kFAQSpaceHeight),
                 FAQBlock(
-                  heading: 'I can\'t connect to OBS, what to do?',
+                  heading: '我无法连接OBS，怎么办？',
                   customBody: EnumerationBlock(
                     title:
-                        'In most cases you should be able to connect to OBS if it\'s listed in autodiscover. If you try to connect to OBS manually because it\'s not listed in autodiscover, there is usually an underlying problem (check the list above). Additionally check that:',
+                        '在大多数情况下，如果 OBS 在自动发现中列出，您应该能够连接到它。 如果您因为 OBS 未在自动发现中列出而尝试手动连接到 OBS，则通常存在潜在问题（请检查上面的列表）。 另外检查一下:',
                     entries: [
-                      'The correct password is used (if set in the OBS WebSocket settings)',
-                      'The host (device running OBS) is reachable with the given IP address. The internal IP address can only be used when both devices are in the same network and the previous points are covered',
+                      '使用正确的密码（如果在 OBS WebSocket 设置中设置）)',
+                      '可以使用给定的 IP 地址访问主机（运行 OBS 的设备）。 仅当两台设备位于同一网络且覆盖了前面的要点时，才能使用内部 IP 地址',
                     ],
                   ),
                 ),
                 SizedBox(height: kFAQSpaceHeight),
                 FAQBlock(
-                  heading: 'When will feature XY be available?',
+                  heading: 'XY 功能何时可用?',
                   text:
-                      'I have quite a backlog to work through - some stuff I want to implement in general and some have been requested by you! I dont\'t have a public board showcasing all the tasks currently (might be added in the future). Feel free to contact me for feature requests / bugs or check the GitHub page!',
+                      '我有相当多的积压工作需要处理 - 有些东西我一般想要实现，有些是您要求的！ 我当前没有展示所有任务的公共板（将来可能会添加）。 如需功能请求/错误，请随时与我联系或查看 GitHub 页面！',
                 ),
                 SizedBox(height: kFAQSpaceHeight),
                 FAQBlock(
-                  heading: 'I think I found a bug! What to do?',
+                  heading: '我想我发现了一个错误！ 该怎么办?',
                   text:
-                      'This app does not have any bugs, they are all features of course... All jokes aside, feel free to contact me (check the About page for different ways) or check the GitHub page for issues - if your bug is not listed, please add a new issue! If it already exists, leave a thumbs up or a comment to emphasize it so I will focus on fixing it!',
+                      '这个应用程序没有任何错误，它们当然都是功能...抛开所有笑话，请随时与我联系（检查“关于”页面以了解不同的方式）或检查 GitHub 页面是否有问题 - 如果您的错误未列出， 请添加新问题！ 如果它已经存在，请竖起大拇指或发表评论以强调它，以便我将重点修复它!',
                 ),
               ],
             ),

@@ -84,12 +84,12 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
   }
 
   String? _nameValidator(String? name) => (name?.trim().isEmpty ?? true)
-      ? 'Please provide a name!'
+      ? '请提供名称！'
       : name?.trim() != this.widget.connection.name &&
               Hive.box<Connection>(HiveKeys.SavedConnections.name)
                   .values
                   .any((connection) => connection.name == name)
-          ? 'Name already in use!'
+          ? '名称已被使用!'
           : null;
 
   @override
@@ -98,21 +98,21 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
       titleWidget: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Text('Edit Connection'),
+          const Text('编辑连接'),
           CupertinoButton(
             padding: const EdgeInsets.only(right: 4.0),
             minSize: 0,
             child: const Text(
-              'Delete',
+              '删除',
               style: TextStyle(color: CupertinoColors.destructiveRed),
             ),
             onPressed: () {
               ModalHandler.showBaseDialog(
                 context: context,
                 dialogWidget: ConfirmationDialog(
-                  title: 'Delete Connection',
+                  title: '删除连接',
                   body:
-                      'Are you sure you want to delete this connection? This action can\'t be undone!',
+                      '您确定要删除此连接吗？ 此操作无法撤消！',
                   isYesDestructive: true,
                   onOk: (_) {
                     Navigator.of(context).pop();
@@ -128,7 +128,7 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
         children: [
           if (StylingHelper.isApple(context)) const SizedBox(height: 12.0),
           const Text(
-            'Change the following information to change your saved connection',
+            '更改以下信息以更改您保存的连接',
             textAlign: TextAlign.left,
           ),
           const SizedBox(height: 12.0),
@@ -155,7 +155,7 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
                         FontFeature.tabularFigures(),
                       ],
                     ),
-                    placeholder: 'Port',
+                    placeholder: '端口',
                     keyboardType: TextInputType.number,
                     inputFormatters: [FilteringTextInputFormatter.digitsOnly],
                   ),
@@ -177,7 +177,7 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
           ),
           BaseAdaptiveTextField(
             controller: _pw,
-            placeholder: 'Password',
+            placeholder: '密码',
             autocorrect: false,
             obscureText: _obscurePW,
             suffixIcon: StylingHelper.isApple(context)
@@ -216,10 +216,10 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
       actions: [
         DialogActionConfig(
           isDefaultAction: true,
-          child: const Text('Cancel'),
+          child: const Text('取消'),
         ),
         DialogActionConfig(
-          child: const Text('Save'),
+          child: const Text('保存'),
           popOnAction: false,
           onPressed: (_) {
             CustomValidationTextEditingController host =
@@ -231,6 +231,9 @@ class _EditConnectionDialogState extends State<EditConnectionDialog> {
               /// Since [HiddenScene] and [HiddenSceneItem] elements are based on the
               /// connection name and host, once the user updates the connection, we need
               /// to update these elements as well to preserve the status
+               /// 由于 [HiddenScene] 和 [HiddenSceneItem] 元素基于
+               /// 连接名称和主机，一旦用户更新连接，我们需要
+               /// 更新这些元素并保留状态
               if (newName != this.widget.connection.name ||
                   newHost != this.widget.connection.host) {
                 Hive.box<HiddenScene>(HiveKeys.HiddenScene.name)

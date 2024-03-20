@@ -43,7 +43,7 @@ class _AudioInputsState extends State<AudioInputs>
                 padding: EdgeInsets.only(bottom: 12.0),
                 child: Align(
                   child: Text(
-                    'Global',
+                    '混合',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       decoration: TextDecoration.underline,
@@ -63,7 +63,7 @@ class _AudioInputsState extends State<AudioInputs>
                         .toList()
                     : [
                         const PlaceholderSceneItem(
-                            text: 'No Global Audio source available...'),
+                            text: '没有可用的混合音频源...'),
                         const SizedBox(height: 12.0),
                       ],
               ),

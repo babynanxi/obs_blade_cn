@@ -75,7 +75,7 @@ class LogList extends StatelessWidget {
                       padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
                       child: BaseResult(
                         icon: BaseResultIcon.Missing,
-                        text: 'No logs found!',
+                        text: '没有找到日志！',
                       ),
                     ),
                   ...datesMSWithLogs.map(

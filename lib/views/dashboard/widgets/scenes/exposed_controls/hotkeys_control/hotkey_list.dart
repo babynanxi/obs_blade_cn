@@ -68,16 +68,16 @@ class _HotkeyListState extends State<HotkeyList> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hotkeys',
+                '热键',
                 style: Theme.of(context).textTheme.headlineSmall,
               ),
               const SizedBox(height: 8.0),
               const Text(
-                  'Only these internal names are exposed by the WebSocket API, so a bit of guessing and try and error is necessary to find the correct ones. Users have also reported that some hotkeys do not work at all via the WebSocket API, so expect problems when using this feature.'),
+                  'WebSocket API 仅公开这些内部名称，因此需要进行一些猜测和尝试才能找到正确的名称。 用户还报告说，某些热键根本无法通过 WebSocket API 工作，因此使用此功能时预计会出现问题。'),
               const SizedBox(height: 12.0),
               CupertinoTextField(
                 controller: _controller,
-                placeholder: 'Filter...',
+                placeholder: '筛选...',
                 clearButtonMode: OverlayVisibilityMode.editing,
               ),
               const SizedBox(height: 12.0),
@@ -92,7 +92,7 @@ class _HotkeyListState extends State<HotkeyList> {
                   builder: (context) {
                     if (dashboardStore.hotkeys == null) {
                       return BaseProgressIndicator(
-                        text: 'Fetching...',
+                        text: '抓取...',
                       );
                     }
 
@@ -114,7 +114,7 @@ class _HotkeyListState extends State<HotkeyList> {
                         children: [
                           if (hotkeyBox.values.isNotEmpty) ...[
                             const SectionHeader(
-                              title: 'Favourites',
+                              title: '收藏夹',
                             ),
                             ..._filteredSavedHotkeys.map(
                               (hotkey) => HotkeyEntry(
@@ -127,7 +127,7 @@ class _HotkeyListState extends State<HotkeyList> {
                           ...[
                             if (hotkeyBox.values.isNotEmpty)
                               const SectionHeader(
-                                title: 'All',
+                                title: '全部',
                               ),
                             ..._filteredAllHotkeys.map(
                               (hotkey) => HotkeyEntry(

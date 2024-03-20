@@ -46,7 +46,7 @@ class StreamingControls extends StatelessWidget {
             color: dashboardStore.isLive
                 ? CupertinoColors.destructiveRed
                 : CupertinoColors.activeGreen,
-            text: dashboardStore.isLive ? 'Go Offline' : 'Go Live',
+            text: dashboardStore.isLive ? '停止推流' : '开始推流',
           ),
         ),
       ),

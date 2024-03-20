@@ -14,7 +14,7 @@ class SceneContent extends StatelessWidget {
       children: [
         Flexible(
           child: BaseCard(
-            title: 'Scene Items',
+            title: '场景项目',
             rightPadding: 12,
             paddingChild: EdgeInsets.all(0),
             child: SizedBox(
@@ -25,7 +25,7 @@ class SceneContent extends StatelessWidget {
         ),
         Flexible(
           child: BaseCard(
-            title: 'Audio',
+            title: '音频',
             leftPadding: 12,
             paddingChild: EdgeInsets.all(0),
             child: SizedBox(

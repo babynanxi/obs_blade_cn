@@ -50,13 +50,13 @@ class StatusAppBar extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ThemedCupertinoButton(
-                text: 'Close',
+                text: '关闭连接',
                 onPressed: () => ModalHandler.showBaseDialog(
                   context: context,
                   dialogWidget: ConfirmationDialog(
-                    title: 'Close Connection',
+                    title: '关闭连接',
                     body:
-                        'Are you sure you want to close the current WebSocket connection?',
+                        '您确定要关闭当前的 WebSocket 连接吗？',
                     isYesDestructive: true,
                     onOk: (_) {
                       dashboardStore.stopTimers();
@@ -75,7 +75,7 @@ class StatusAppBar extends StatelessWidget {
           Column(
             children: <Widget>[
               Text(
-                'Dashboard',
+                '仪表板',
                 style: CupertinoTheme.of(context).textTheme.navTitleTextStyle,
               ),
               Padding(
@@ -90,7 +90,7 @@ class StatusAppBar extends StatelessWidget {
                         color: dashboardStore.isLive
                             ? CupertinoColors.activeGreen
                             : CupertinoColors.destructiveRed,
-                        text: dashboardStore.isLive ? 'Live' : 'Not Live',
+                        text: dashboardStore.isLive ? '推流中' : '未推流',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                       const SizedBox(width: 8.0),
@@ -105,9 +105,9 @@ class StatusAppBar extends StatelessWidget {
                             : CupertinoColors.destructiveRed,
                         text: dashboardStore.isRecording
                             ? dashboardStore.isRecordingPaused
-                                ? 'Paused Recording'
-                                : 'Recording'
-                            : 'Not Recording',
+                                ? '暂停录制'
+                                : '录制中'
+                            : '未录制',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
                     ],

@@ -75,8 +75,8 @@ class _ThemeLoaderState extends State<ThemeLoader> {
             ),
           ),
           description:
-              'Load the configuration from another theme if you want to work with existing color settings',
-          buttonText: 'Load',
+              '如果您想使用现有的颜色设置，请从另一个主题加载配置',
+          buttonText: '加载',
           onButtonPressed: () => this.widget.onLoadTheme?.call(_selectedTheme),
         ),
         const SizedBox(height: 12.0),

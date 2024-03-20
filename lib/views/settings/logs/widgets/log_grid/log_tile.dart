@@ -39,7 +39,7 @@ class LogTile extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            '${this.logs.length} entries',
+            '${this.logs.length} 日志列表',
             style: Theme.of(context).textTheme.bodySmall,
           ),
           const Icon(

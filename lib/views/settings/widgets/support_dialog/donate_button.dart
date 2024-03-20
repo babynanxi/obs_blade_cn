@@ -45,11 +45,11 @@ class DonateButton extends StatelessWidget {
               ? ModalHandler.showBaseDialog(
                   context: context,
                   dialogWidget: ConfirmationDialog(
-                    title: 'Before you leave a tip...',
+                    title: '在您留下小费之前...',
                     body:
-                        'You haven\'t purchased Blacksmith yet and you are trying to leave me a tip - you won\'t get anything from tipping me but Blacksmith gives you some customisation at least so that might make more sense for you!\n\nJust consider this before you actually leave a tip! :)',
-                    noText: 'Cancel',
-                    okText: 'Leave Tip',
+                        '您还没有购买 Blacksmith，并且想给我小费 - 您不会从给我小费中得到任何东西，但 Blacksmith 至少会为您提供一些定制功能，这样对您来说可能更有意义！\n\n只要考虑一下 在你真正留下小费之前！ :)',
+                    noText: '取消',
+                    okText: '留下小费',
                     enableDontShowAgainOption: true,
                     onOk: (checked) {
                       Hive.box(HiveKeys.Settings.name).put(

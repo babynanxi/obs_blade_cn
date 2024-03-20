@@ -17,7 +17,7 @@ class QuickConnect extends StatelessWidget {
       child: Column(
         children: [
           const Text(
-              'Scan the "Connect QR" of the WebSocket plugin to connect to OBS instantly.\n\nThis feature only works when connecting to an OBS instance which is in the same network as this device!'),
+              '扫描WebSocket插件的“连接二维码”即可立即连接OBS。\n\n此功能仅在连接到与该设备处于同一网络的OBS实例时才有效！'),
           const SizedBox(height: 20.0),
           const BaseDivider(),
           const SizedBox(height: 18.0),
@@ -39,7 +39,7 @@ class QuickConnect extends StatelessWidget {
               },
             ),
             icon: const Icon(CupertinoIcons.qrcode_viewfinder),
-            text: 'Scan',
+            text: '扫描二维码',
           ),
         ],
       ),

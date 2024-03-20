@@ -45,7 +45,7 @@ class _AddEditOwncastUsernameDialogState
 
   String? _usernameValidation(String? username) {
     if (username == null || username.isEmpty) {
-      return 'Please provide a username!';
+      return '请提供用户名!';
     }
     if (this.widget.username != null && username == this.widget.username) {
       return null;
@@ -57,12 +57,12 @@ class _AddEditOwncastUsernameDialogState
                 defaultValue: <String, String>{})
             .keys
             .contains(username)
-        ? 'Username already exists'
+        ? '此用户名已存在'
         : null;
   }
 
   String? _owncastDomainValidation(String? link) {
-    if (link == null || link.isEmpty) return 'Domain is required!';
+    if (link == null || link.isEmpty) return '域名为必填项!';
     return null;
   }
 
@@ -97,16 +97,16 @@ class _AddEditOwncastUsernameDialogState
   Widget build(BuildContext context) {
     return ConfirmationDialog(
       title:
-          '${(this.widget.username == null ? 'Add' : 'Edit')} Owncast Username',
+          '${(this.widget.username == null ? '添加' : '删除')} Owncast 用户名',
       bodyWidget: Column(
         children: [
           const Text(
-            'Add the name of a Owncast user to be able to view this user\'s chat',
+            '添加 Owncast 用户的名称以便能够查看该用户的聊天',
           ),
           const SizedBox(height: 12.0),
           BaseAdaptiveTextField(
             controller: _usernameController,
-            placeholder: 'Username',
+            placeholder: '用户名',
           ),
           const SizedBox(height: 8.0),
           const Text(

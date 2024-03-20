@@ -54,7 +54,7 @@ class HotkeyEntry extends StatelessWidget {
                   NetworkHelper.makeRequest(
                     GetIt.instance<NetworkStore>().activeSession!.socket,
                     RequestType.TriggerHotkeyByName,
-                    {'hotkeyName': this.hotkey.name},
+                    {'热键名称': this.hotkey.name},
                   );
                 },
               );

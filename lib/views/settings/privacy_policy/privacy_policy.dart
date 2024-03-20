@@ -14,8 +14,8 @@ class PrivacyPolicyView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: TransculentCupertinoNavBarWrapper(
-        previousTitle: 'Settings',
-        title: 'Privacy Policy',
+        previousTitle: '设置',
+        title: '隐私政策',
         listViewChildren: [
           Padding(
             padding: const EdgeInsets.only(top: 12.0),
@@ -28,7 +28,7 @@ class PrivacyPolicyView extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Text(
-                    'Privacy Policy',
+                    '隐私政策',
                     style: Theme.of(context).textTheme.headlineSmall,
                   ),
                 ),
@@ -42,7 +42,7 @@ class PrivacyPolicyView extends StatelessWidget {
                 const ThemedRichText(
                   textSpans: [
                     TextSpan(
-                      text: 'Currently ',
+                      text: '现在 ',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontStyle: FontStyle.italic,
@@ -50,7 +50,7 @@ class PrivacyPolicyView extends StatelessWidget {
                     ),
                     TextSpan(
                       text:
-                          'OBS Blade does not collect and send any data to any kind of server on its own! The respective app stores (Google Play Store and Apple App Store) will collect analytics data about app usage, crashes, etc. but I\'m not collecting anything. If you want to know more about what those app stores collect, take a look at their privacy policies:',
+                          'OBS Blade 不会自行收集任何数据并将其发送到任何类型的服务器！ 相应的应用程序商店（Google Play 商店和 Apple 应用程序商店）将收集有关应用程序使用情况、崩溃等的分析数据，但我不会收集任何内容。 如果您想更多地了解这些应用程序商店收集的内容，请查看他们的隐私政策:',
                     ),
                   ],
                 ),
@@ -70,7 +70,7 @@ class PrivacyPolicyView extends StatelessWidget {
                   ],
                 ),
                 const Text(
-                  'I might add third party providers later on to help me out with stuff like device-sync, error handling, feedback, statistics, etc. and if I do and this third party provider collects any personal data about you, I will add this to this privacy policy! Since data privacy is very important to me, I will try to be very strict about which third party I will work with.\n\nIf you have any concerns about your data or would like to help me improve in this regard, don\'t hesitate to contact me. You can visit the "About" page inside the app to see possible ways to get in touch me with. The preferred way to contact me for such things though is via email:',
+                  '我稍后可能会添加第三方提供商来帮助我解决设备同步、错误处理、反馈、统计等问题，如果我这样做并且该第三方提供商收集了有关您的任何个人数据，我会将其添加到此 隐私政策！ 由于数据隐私对我来说非常重要，因此我会尽量严格地选择与哪个第三方合作。\n\n如果您对自己的数据有任何疑虑或希望帮助我在这方面进行改进，请不要\' 请随时与我联系。 您可以访问应用程序内的“关于”页面，查看与我联系的可能方式。 就此类事情联系我的首选方式是通过电子邮件:',
                 ),
                 SocialBlock(
                   socialInfos: [
@@ -82,7 +82,7 @@ class PrivacyPolicyView extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Text('Thanks for reading! :)')
+                const Text('谢谢阅读! :)')
               ],
             ),
           ),

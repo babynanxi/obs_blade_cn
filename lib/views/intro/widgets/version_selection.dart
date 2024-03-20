@@ -25,7 +25,7 @@ class _VersionSelectionState extends State<VersionSelection> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'First of all, please select the version of OBS you are using. This will determine what you need to do in order to use this app with your OBS instance!',
+            '首先，请选择您所使用的OBS版本。 这将决定您需要做什么才能将此应用程序与您的 OBS 实例一起使用！',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelSmall!.copyWith(
                   fontSize: 18,
@@ -36,10 +36,10 @@ class _VersionSelectionState extends State<VersionSelection> {
             topPadding: 32.0,
             bottomPadding: 18.0,
             borderColor: Theme.of(context).dividerColor.withOpacity(0.2),
-            title: 'Version',
+            title: '选择您的obs版本',
             trailingTitleWidget: const QuestionMarkTooltip(
                 message:
-                    'Where to find the version of your OBS instance depends on your operating system:\n\nWindows / Linux:\nHelp -> About\n\nmacOS:\nOBS -> About OBS'),
+                    '在哪里可以找到OBS实例的版本取决于您的操作系统:\n\nWindows / Linux:\n帮助 -> 关于\n\nmacOS:\nOBS -> 关于 OBS'),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 32.0),
               child: Row(
@@ -48,14 +48,14 @@ class _VersionSelectionState extends State<VersionSelection> {
                   SelectableBox(
                     colorUnselected: Theme.of(context).scaffoldBackgroundColor,
                     selected: _nextStage == IntroStage.TwentyEightParty,
-                    text: '28.X and above',
+                    text: '28.X 以上',
                     onTap: () => setState(
                         () => _nextStage = IntroStage.TwentyEightParty),
                   ),
                   SelectableBox(
                     colorUnselected: Theme.of(context).scaffoldBackgroundColor,
                     selected: _nextStage == IntroStage.InstallationSlides,
-                    text: '27.X and below',
+                    text: '27.X 以上',
                     onTap: () => setState(
                         () => _nextStage = IntroStage.InstallationSlides),
                   ),
@@ -107,7 +107,7 @@ class _VersionSelectionState extends State<VersionSelection> {
             onPressed: _nextStage != null
                 ? () => GetIt.instance<IntroStore>().setStage(_nextStage!)
                 : null,
-            text: 'Next',
+            text: '继续',
           ),
         ],
       ),

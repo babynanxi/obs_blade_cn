@@ -46,7 +46,7 @@ class _TwentyEightPartyState extends State<TwentyEightParty> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Congrats!\n\nYou are ready to go - since OBS 28.X the WebSocket plugin got merged into OBS, which means it\'s already part of your instance and can be used out of the box!\n\nIsn\'t this great?!',
+                '恭喜!\n\n您已准备好开始 - 自 OBS 28.X 起，WebSocket 插件已合并到 OBS 中，这意味着它已经是您实例的一部分，并且可以开箱即用！\n\n这不是很棒吗?!',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.labelSmall!.copyWith(
                       fontSize: 18,
@@ -66,7 +66,7 @@ class _TwentyEightPartyState extends State<TwentyEightParty> {
                         : AppRoutingKeys.Tabs.route,
                   );
                 },
-                text: 'Start',
+                text: '启动',
               ),
             ],
           ),

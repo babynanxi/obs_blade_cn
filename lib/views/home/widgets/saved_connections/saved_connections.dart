@@ -20,7 +20,7 @@ class SavedConnections extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 12.0, left: 24.0),
           child: Text(
-            'Saved Connections',
+            '已保存的连接',
             style: Theme.of(context).textTheme.headlineSmall,
           ),
         ),

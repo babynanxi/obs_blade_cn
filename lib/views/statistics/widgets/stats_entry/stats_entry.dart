@@ -46,7 +46,7 @@ class StatsEntry extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          this.pastStatsData.name ?? 'Unnamed entry',
+                          this.pastStatsData.name ?? '未命名',
                           style:
                               Theme.of(context).textTheme.labelLarge!.copyWith(
                                     fontSize: 18.0,

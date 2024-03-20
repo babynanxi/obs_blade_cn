@@ -42,7 +42,7 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
         data: pastStatsData.cpuUsageList,
         dataTimesMS: pastStatsData.listEntryDateMS,
         amountFixedTooltipValue: 2,
-        dataName: 'CPU Usage',
+        dataName: 'CPU使用率',
         dataUnit: '%',
         yMax: 100,
         chartColor: Colors.blueAccent,
@@ -67,7 +67,7 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
         dataTimesMS: pastStatsData.listEntryDateMS,
         amountFixedTooltipValue: 3,
         amountFixedYAxis: 1,
-        dataName: 'Memory Usage',
+        dataName: '内存使用情况',
         dataUnit: ' GB',
         minYInterval: 0.1,
         chartColor: Colors.redAccent,
@@ -78,14 +78,14 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
 
     return Scaffold(
       body: TransculentCupertinoNavBarWrapper(
-        previousTitle: 'Statistics',
-        title: 'Details',
+        previousTitle: '统计数据',
+        title: '详情',
         actions: AppBarActions(
           actions: [
             AppBarActionEntry(
                 title: pastStatsData.starred != null && pastStatsData.starred!
-                    ? 'Delete from Favorites'
-                    : 'Mark as Favorite',
+                    ? '从收藏夹中删除'
+                    : '标记为收藏',
                 onAction: () {
                   if (pastStatsData.starred != null) {
                     pastStatsData.starred = !pastStatsData.starred!;
@@ -100,13 +100,13 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
                   setState(() {});
                 }),
             AppBarActionEntry(
-                title: 'Rename',
+                title: '重命名',
                 onAction: () {
                   ModalHandler.showBaseDialog(
                     context: context,
                     dialogWidget: InputDialog(
-                      title: 'Rename entry',
-                      body: 'Please enter a new name for this entry',
+                      title: '重命名',
+                      body: '请为此条重命名一个新名称',
                       inputPlaceholder: 'Entry name',
                       inputText: pastStatsData.name,
                       onSave: (name) {
@@ -123,16 +123,16 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
                   );
                 }),
             AppBarActionEntry(
-              title: 'Delete',
+              title: '删除',
               isDestructive: true,
               onAction: () {
                 ModalHandler.showBaseDialog(
                   context: context,
                   dialogWidget: ConfirmationDialog(
-                    title: 'Delete entry',
+                    title: '删除',
                     isYesDestructive: true,
                     body:
-                        'Are you sure you want to delete this entry? This action can\'t be undone so be sure this is what you actually want!',
+                        '您确定要删除此项吗？ 此操作无法撤消，因此请确保这是您真正想要的!',
                     onOk: (_) {
                       if (pastStatsData is PastStreamData) {
                         pastStatsData.delete();
@@ -202,23 +202,23 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
                     ),
                   ),
                   StatsContainer(
-                    title: 'Some numbers',
+                    title: '时间',
                     children: [
                       FormattedText(
-                        label: 'Session Time',
+                        label: '时间',
                         text: pastStatsData.totalTime!
                             .secondsToFormattedDurationString(),
                         width: 100.0,
                       ),
                       FormattedText(
-                        label: 'Average FPS',
+                        label: '平均帧率',
                         text: (pastStatsData.fpsList.reduce((a, b) => a + b) /
                                 pastStatsData.fpsList.length)
                             .toStringAsFixed(2),
                         width: 75.0,
                       ),
                       FormattedText(
-                        label: 'Average CPU Usage',
+                        label: '平均 CPU 使用率',
                         text: (pastStatsData.cpuUsageList
                                     .reduce((a, b) => a + b) /
                                 pastStatsData.cpuUsageList.length)
@@ -227,7 +227,7 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
                         width: 115.0,
                       ),
                       FormattedText(
-                        label: 'Average kbit/s',
+                        label: '平均码率 kbit/s',
                         text: (pastStatsData.kbitsPerSecList
                                     .reduce((a, b) => a + b) /
                                 pastStatsData.kbitsPerSecList.length)
@@ -235,7 +235,7 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
                         width: 85.0,
                       ),
                       FormattedText(
-                        label: 'Average Memory Usage',
+                        label: '平均内存使用量',
                         text: ((pastStatsData.memoryUsageList
                                         .reduce((a, b) => a + b) /
                                     pastStatsData.memoryUsageList.length) /
@@ -245,22 +245,22 @@ class _StatisticDetailViewState extends State<StatisticDetailView> {
                         width: 140.0,
                       ),
                       FormattedText(
-                        label: 'Total Output Frames',
+                        label: '总输出帧数',
                         text: pastStatsData.outputTotalFrames.toString(),
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Skipped Output Frames',
+                        label: '跳过的输出帧',
                         text: pastStatsData.outputSkippedFrames.toString(),
                         width: 140.0,
                       ),
                       FormattedText(
-                        label: 'Total Render Frames',
+                        label: '总渲染帧数',
                         text: pastStatsData.renderTotalFrames.toString(),
                         width: 120.0,
                       ),
                       FormattedText(
-                        label: 'Skipped Render Frames',
+                        label: '跳过渲染帧',
                         text: pastStatsData.renderSkippedFrames.toString(),
                         width: 140.0,
                       ),

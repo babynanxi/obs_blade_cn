@@ -35,7 +35,7 @@ class UsernameActionRow extends StatelessWidget {
       children: [
         ThemedCupertinoButton(
           padding: const EdgeInsets.all(0),
-          text: 'Add',
+          text: '添加',
           onPressed: () => ModalHandler.showBaseDialog(
             context: context,
             dialogWidget: switch (chatType) {
@@ -51,7 +51,7 @@ class UsernameActionRow extends StatelessWidget {
         const SizedBox(height: 15.0, child: VerticalDivider()),
         ThemedCupertinoButton(
           padding: const EdgeInsets.all(0),
-          text: 'Edit',
+          text: '编辑',
           onPressed: selectedChatUsername != null
               ? () => ModalHandler.showBaseDialog(
                     context: context,
@@ -76,7 +76,7 @@ class UsernameActionRow extends StatelessWidget {
         ThemedCupertinoButton(
           padding: const EdgeInsets.all(0),
           isDestructive: selectedChatUsername != null,
-          text: 'Delete',
+          text: '删除',
           onPressed: selectedChatUsername != null
               ? () => ModalHandler.showBaseDialog(
                     context: context,

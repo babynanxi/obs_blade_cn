@@ -18,7 +18,7 @@ class RestoreButton extends StatelessWidget {
       hiveKey: HiveKeys.Settings,
       rebuildKeys: const [SettingsKeys.BoughtBlacksmith],
       builder: (context, settingsBox, child) => ThemedCupertinoButton(
-        text: 'Restore',
+        text: '恢复',
         onPressed: !settingsBox.get(
           SettingsKeys.BoughtBlacksmith.name,
           defaultValue: false,
@@ -33,7 +33,7 @@ class RestoreButton extends StatelessWidget {
                   context: context,
                   showDuration: const Duration(seconds: 10),
                   content: BaseProgressIndicator(
-                    text: 'Trying to restore...',
+                    text: '正在尝试恢复...',
                   ),
                 );
 
@@ -51,7 +51,7 @@ class RestoreButton extends StatelessWidget {
                         barrierDismissible: true,
                         dialogWidget: const InfoDialog(
                           body:
-                              'It was not possible to restore Blacksmith. Make sure you have a working internet connection and you actually bought it before!\n\nYou can try to buy it again - it won\'t be possible if you bought it with your current App Store account.\n\nContact me if you can\'t find a solution!',
+                              '铁匠无法恢复。 确保您有可用的互联网连接，并且您之前确实购买过它！\n\n您可以尝试再次购买 - 如果您使用当前的 App Store 帐户购买，则不可能。\n\n如果出现以下情况，请与我联系： 你找不到解决方案!',
                         ),
                       );
                     }

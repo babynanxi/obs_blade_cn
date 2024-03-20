@@ -32,6 +32,11 @@ class _IntroSlidesState extends State<IntroSlides> {
   /// a slide for a speciic time and hopefully use this time to take
   /// a look at the instrcutions / possibilities
   // Timer? _timerToContinue;
+  /// 将用于强制用户在给定时间内停留在幻灯片上
+   /// 在能够继续之前。 这将确保他们至少看到
+   /// 特定时间的幻灯片并希望利用这个时间来拍摄
+   /// 看一下说明/可能性
+   // 定时器？ _timerToContinue；
 
   final List<bool> _pagesLockedPreviously = [false, false, false];
   final List<bool> _pagesToLockOn = [true, true, true];
@@ -81,7 +86,7 @@ class _IntroSlidesState extends State<IntroSlides> {
           textSpans: [
             const TextSpan(
               text:
-                  'Visit the OBS WebSocket GitHub page to get the plugin to make this app work:\n\n',
+                  '访问 OBS WebSocket GitHub 页面以获取使该应用程序运行的插件:\n\n',
             ),
             WidgetSpan(
               child: SocialBlock(
@@ -99,7 +104,7 @@ class _IntroSlidesState extends State<IntroSlides> {
             ),
             const TextSpan(
               text:
-                  '\n\nClick on the "Releases" link in the Downloads section as seen in the screenshot or ',
+                  '\n\n单击“下载”部分中的“发布”链接，如屏幕截图所示或 ',
             ),
             WidgetSpan(
               child: SocialBlock(
@@ -130,7 +135,7 @@ class _IntroSlidesState extends State<IntroSlides> {
           textSpans: const [
             TextSpan(
               text:
-                  'Scroll down to "Assets" and download the correct installer (for your operating system)\n\n',
+                  '向下滚动到“资产”并下载正确的安装程序（适用于您的操作系统）\n\n',
             ),
             TextSpan(
               text: 'IMPORTANT: Download version 5.X and above!',
@@ -149,7 +154,7 @@ class _IntroSlidesState extends State<IntroSlides> {
           textSpans: const [
             TextSpan(
               text:
-                  'After installing the plugin and restarting OBS, check if Tools -> WebSocket Server Settings is available and use the recommended settings (above) - Enjoy!',
+                  '安装插件并重新启动 OBS 后，检查工具 -> WebSocket 服务器设置是否可用，并使用推荐设置（如上）',
             ),
           ],
           textAlign: TextAlign.left,

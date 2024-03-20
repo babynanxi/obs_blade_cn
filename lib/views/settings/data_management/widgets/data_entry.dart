@@ -29,15 +29,15 @@ class DataEntry extends StatelessWidget {
       title: this.title,
       description: this.description,
       trailing: BaseButton(
-        text: 'Clear',
+        text: '清除',
         isDestructive: true,
         onPressed: () => ModalHandler.showBaseDialog(
           context: context,
           dialogWidget: ConfirmationDialog(
-            title: 'Delete ${this.title}',
+            title: '删除 ${this.title}',
             isYesDestructive: true,
             body: this.customConfirmationText ??
-                'Are you sure you want to delete all ${this.title}? This action can\'t be undone!',
+                '您确定要删除全部吗 ${this.title}? 此操作无法撤消!',
             onOk: (_) => this.additionalConfirmationText != null
                 ? Future.delayed(
                     ModalHandler.transitionDelayDuration,

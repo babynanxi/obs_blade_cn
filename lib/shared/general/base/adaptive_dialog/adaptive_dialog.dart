@@ -85,7 +85,7 @@ class _BaseAdaptiveDialogState extends State<BaseAdaptiveDialog> {
                   type: MaterialType.transparency,
                   child: BaseCheckbox(
                     value: _isDontShowChecked,
-                    text: 'Don\'t show this again',
+                    text: '不要再显示此内容',
                     smallText: true,
                     materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
                     onChanged: (checked) =>

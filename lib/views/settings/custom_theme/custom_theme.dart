@@ -41,7 +41,7 @@ class _CustomThemeViewState extends State<CustomThemeView> {
             context: context,
             barrierDismissible: true,
             dialogWidget: const SupportDialog(
-              title: 'Blacksmith',
+              title: '铁匠',
               icon: CupertinoIcons.hammer_fill,
               type: SupportType.Blacksmith,
             ),
@@ -83,15 +83,15 @@ class _CustomThemeViewState extends State<CustomThemeView> {
           }
 
           return TransculentCupertinoNavBarWrapper(
-            previousTitle: 'Settings',
-            title: 'Custom Theme',
+            previousTitle: '设置',
+            title: '自定义主题',
             listViewChildren: [
               BaseCard(
                 bottomPadding: 12.0,
                 child: CleanListTile(
-                  title: 'Use Custom Theme',
+                  title: '使用自定义主题',
                   description:
-                      'Once active the selected theme below will be used for this app. Choose one of the predefined themes or your own!',
+                      '一旦激活，下面选定的主题将用于此应用程序。 选择预定义主题之一或您自己的主题！',
                   trailing: BaseAdaptiveSwitch(
                     value: settingsBox.get(SettingsKeys.CustomTheme.name,
                         defaultValue: false),
@@ -114,7 +114,7 @@ class _CustomThemeViewState extends State<CustomThemeView> {
                 ),
               ),
               const BaseCard(
-                title: 'Predefined Themes',
+                title: '预定义主题',
                 bottomPadding: 12.0,
                 paddingChild: EdgeInsets.all(0),
                 child: CustomThemeList(
@@ -122,9 +122,9 @@ class _CustomThemeViewState extends State<CustomThemeView> {
                 ),
               ),
               BaseCard(
-                title: 'Your Themes',
+                title: '你的主题',
                 trailingTitleWidget: ThemedCupertinoButton(
-                  text: 'Add Theme',
+                  text: '添加主题',
                   padding: const EdgeInsets.all(0),
                   onPressed: () => _openAddTheme(context),
                 ),

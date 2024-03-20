@@ -113,7 +113,7 @@ class _StatisticsViewState extends State<StatisticsView> {
               sortResult = dataOrder1.totalTime! - dataOrder2.totalTime!;
               break;
             case FilterType.Name:
-              sortResult = (dataOrder1.name ?? 'Unnamed stream')
+              sortResult = (dataOrder1.name ?? '未命名流')
                   .compareTo((dataOrder2.name) ?? '');
               break;
             case FilterType.Kbits:
@@ -139,7 +139,7 @@ class _StatisticsViewState extends State<StatisticsView> {
     pastStatsData = pastStatsData
 
         /// Filter statistics which name contain the String entered by the user
-        .where((data) => (data.name ?? 'Unnamed stream')
+        .where((data) => (data.name ?? '未命名流')
             .toLowerCase()
             .contains(statisticsStore.filterName))
 
@@ -209,7 +209,7 @@ class _StatisticsViewState extends State<StatisticsView> {
 
     return Scaffold(
       body: TransculentCupertinoNavBarWrapper(
-        title: 'Statistics',
+        title: '统计数据',
         scrollController:
             ModalRoute.of(context)!.settings.arguments as ScrollController,
         listViewChildren: [
@@ -253,9 +253,9 @@ class _StatisticsViewState extends State<StatisticsView> {
                           titlePadding: const EdgeInsets.all(0),
                           titleWidget: const CardHeader(
                             headerDecorationIcon: CupertinoIcons.time_solid,
-                            title: 'Latest\nStats.',
+                            title: '最新\n统计数据。',
                             description:
-                                'The most freshest statistic of your latest streaming and recording session',
+                                '您最新推流和录制的最新统计数据',
                           ),
                           paddingChild: const EdgeInsets.all(0),
                           child: latestRecordStreamStat.isNotEmpty &&
@@ -276,15 +276,15 @@ class _StatisticsViewState extends State<StatisticsView> {
                                 )
                               : const StatsEntryPlaceholder(
                                   text:
-                                      'You haven\'t streamed or recorded using this app? Or have you deleted all statistic entries?! Whatever it is, you should start streaming / recording!',
+                                      '您还没有使用此应用程序进行流式传输或录制？ 或者你已经删除了所有的统计数据？！ 无论是什么，您随时都应该开始推流/录制！',
                                 ),
                         ),
                         BaseCard(
                           titlePadding: const EdgeInsets.all(0),
                           titleWidget: const CardHeader(
-                            title: 'Previous\nStats.',
+                            title: '之前的\n统计数据.',
                             description:
-                                'All previous streaming / recording sessions',
+                                '所有之前的推流/录制数据',
                             additionalCardWidgets: [
                               SortFilterPanel(),
                             ],
@@ -319,8 +319,8 @@ class _StatisticsViewState extends State<StatisticsView> {
                                               .where((latestStat) =>
                                                   latestStat != null)
                                               .isEmpty
-                                          ? 'Can\'t find statistics for your previous streams / recordings. Go ahead - stream or record some good stuff!'
-                                          : 'No additional statistics to the ones listed above found or none found which match your filters! Stream / record more or change your filters!',
+                                          ? '找不到您之前的直播/录制的统计信息。 继续吧 - 直播或录制一些好东西！'
+                                          : '没有找到上面列出的其他统计信息，或者没有找到与您的查找匹配的统计信息！ 推流/录制更多内容或更改您的查找关键词！',
                                     );
                             },
                           ),

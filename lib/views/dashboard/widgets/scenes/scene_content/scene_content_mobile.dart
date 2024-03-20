@@ -19,10 +19,10 @@ class SceneContentMobile extends StatelessWidget {
             child: const TabBar(
               tabs: [
                 Tab(
-                  child: Text('Scene Items'),
+                  child: Text('场景项目'),
                 ),
                 Tab(
-                  child: Text('Audio'),
+                  child: Text('音频'),
                 ),
                 // Tab(
                 //   child: Text('Media'),

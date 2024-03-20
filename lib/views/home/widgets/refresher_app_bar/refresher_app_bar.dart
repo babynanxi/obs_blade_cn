@@ -56,7 +56,7 @@ class RefresherAppBar extends StatelessWidget {
                   child: Transform.translate(
                     offset: const Offset(0, 4.0),
                     child: Text(
-                      'OBS Blade',
+                      'OBS 工具',
                       style: CupertinoTheme.of(context)
                           .textTheme
                           .navTitleTextStyle,

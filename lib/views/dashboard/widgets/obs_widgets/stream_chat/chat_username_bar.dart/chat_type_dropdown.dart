@@ -60,7 +60,7 @@ class ChatTypeDropdown extends StatelessWidget {
               dialogWidget: ConfirmationDialog(
                 title: 'YoutTube Chat Beta',
                 body:
-                    'YouTube chat support is still in beta because YouTube is giving me a hard time to integrate it.\n\nUse it with that in mind and contact me if you experience strange behaviour.',
+                    'YouTube 聊天支持仍处于测试阶段，因为 YouTube 让我很难集成它。\n\n使用它时请记住这一点，如果您遇到奇怪的行为，请与我联系。',
                 enableDontShowAgainOption: true,
                 noText: 'Cancel',
                 okText: 'Ok',

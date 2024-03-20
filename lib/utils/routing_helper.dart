@@ -50,9 +50,9 @@ enum Tabs {
 /// current and new tabs will automatically generated / changed
 extension TabsFunctions on Tabs {
   String get name => const {
-        Tabs.Home: 'Home',
-        Tabs.Statistics: 'Statistics',
-        Tabs.Settings: 'Settings',
+        Tabs.Home: '主页',
+        Tabs.Statistics: '统计数据',
+        Tabs.Settings: '设置',
       }[this]!;
 
   IconData get icon => const {

@@ -18,7 +18,7 @@ class ResultEntry extends StatelessWidget {
           textSpans: [
             TextSpan(text: this.result),
             const TextSpan(
-              text: '\n\nPull down to try again!',
+              text: '\n没找到?\n拉下来重试!',
               style: TextStyle(
                 fontWeight: FontWeight.bold,
               ),

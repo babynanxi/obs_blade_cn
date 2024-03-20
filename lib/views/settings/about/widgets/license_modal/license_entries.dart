@@ -114,7 +114,7 @@ class _LicenseEntriesState extends State<LicenseEntries> {
         }
         return Container(
           alignment: Alignment.center,
-          child: BaseProgressIndicator(text: 'Fetching...'),
+          child: BaseProgressIndicator(text: '抓取...'),
         );
       },
     );

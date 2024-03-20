@@ -135,7 +135,7 @@ class _ConnectFormState extends State<ConnectForm> {
                       homeStore.typedInConnection.port = int.tryParse(port);
                     },
                     decoration: const InputDecoration(
-                      labelText: 'Port',
+                      labelText: '端口',
                       errorMaxLines: 2,
                     ),
                     validator: (text) => text != null && text.isNotEmpty
@@ -159,9 +159,9 @@ class _ConnectFormState extends State<ConnectForm> {
                   errorText: snapshot.hasData &&
                           snapshot.data! ==
                               WebSocketCloseCode.AuthenticationFailed
-                      ? 'Wrong password'
+                      ? '密码错误'
                       : null,
-                  labelText: 'Password',
+                  labelText: '密码',
                   suffixIcon: IconButton(
                     icon: Icon(
                       _obscurePW ? Icons.visibility_off : Icons.visibility,
@@ -197,7 +197,7 @@ class _ConnectFormState extends State<ConnectForm> {
                     //   const SizedBox(width: 24.0),
                     // ],
                     BaseButton(
-                      text: 'Connect',
+                      text: '连接',
                       onPressed: () {
                         CustomValidationTextEditingController host =
                             homeStore.domainMode ? _hostDomain : _hostIP;

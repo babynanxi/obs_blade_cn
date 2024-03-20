@@ -44,7 +44,7 @@ class TransitionControls extends StatelessWidget {
           children: [
             DropdownButton<String?>(
               value: dashboardStore.currentTransition?.transitionName,
-              disabledHint: const Text('Empty...'),
+              disabledHint: const Text('空的...'),
               isDense: true,
               items: dashboardStore.availableTransitions
                   ?.map(

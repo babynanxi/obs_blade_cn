@@ -89,7 +89,7 @@ abstract class _NetworkStore with Store {
       }
     } catch (e) {
       GeneralHelper.advLog(
-        'Not possible to connect to ${connection.host}${connection.port != null ? (":${connection.port}") : ""}: $e',
+        '无法连接到 ${connection.host}${connection.port != null ? (":${connection.port}") : ""}: $e',
         level: LogLevel.Error,
         includeInLogs: true,
       );
@@ -133,7 +133,7 @@ abstract class _NetworkStore with Store {
         },
         onDone: () {
           GeneralHelper.advLog(
-            'Initial WebSocket connection done, close code: ${this.activeSession!.socket.closeCode}, {WebSocketCloseCode.values.firstWhere((closeCode) => closeCode.identifier == this.activeSession!.socket.closeCode, orElse: () => WebSocketCloseCode.UnknownReason).message}',
+            '初始 WebSocket 连接完成，关闭代码: ${this.activeSession!.socket.closeCode}, {WebSocketCloseCode.values.firstWhere((closeCode) => closeCode.identifier == this.activeSession!.socket.closeCode, orElse: () => WebSocketCloseCode.UnknownReason).message}',
           );
 
           authCompleter.complete(
@@ -145,7 +145,7 @@ abstract class _NetworkStore with Store {
           );
         },
         onError: (error) => GeneralHelper.advLog(
-          'Error initial WebSocket connection (stores/shared/network.dart) | $error',
+          '初始 WebSocket 连接出错 (stores/shared/network.dart) | $error',
           includeInLogs: true,
         ),
       );
