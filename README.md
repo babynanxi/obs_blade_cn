@@ -2,7 +2,7 @@
 
 ## 语言选择 language selection
 
-[English](./README.en.md)
+[English](./README_en.md)
 [中文](/README.md)
 
 ![alt text](https://assets.kounex.com/images/obs-blade/store_banner_3.png "OBS Blade Store Banner")
